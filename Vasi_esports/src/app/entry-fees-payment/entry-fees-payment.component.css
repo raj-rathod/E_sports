@@ -1,0 +1,197 @@
+#paymentCard{
+    background-color: rgba(25, 78, 5, 0.699);
+}
+@media only screen and (max-width: 600px) {
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 100px;
+    }
+    #imageSize{
+        height: 80px;
+        width: 80px;
+    }
+    #textImage h1{
+        font-size: 13px;
+    }
+    #textIcon h1 i{
+        font-size: 50px;
+    }
+    #textIcon h1{
+        font-size: 17px;
+    }
+    .btn ,.btn-dark,.btn-primary,.btn-danger{
+        padding: 4px;
+        font-size: 12px;
+    }
+    #input{
+        width: 80%;
+        
+    }
+    .form-group .form-control{
+       font-size: 12px;
+    }
+    #walletText h3{
+        font-size: 13px;
+    }
+  }
+  
+  @media only screen and (min-width:600px) {
+    #headingText{
+        font-size: 23px;
+    }
+    #headingTextHr{
+        width: 120px;
+    }
+    #imageSize{
+        height:100px;
+        width: 100px;
+    }
+    #textImage h1{
+        font-size: 14px;
+    }
+    #textIcon h1 i{
+        font-size: 60px;
+    }
+    #textIcon h1{
+        font-size: 18px;
+    }
+    #logoSize{
+        height: 100px;
+    }
+    .btn ,.btn-dark,.btn-primary,.btn-danger{
+        padding: 5px;
+        font-size: 13px;
+    }
+    #input{
+        width: 80%;
+        
+    }
+    .form-group .form-control{
+       font-size: 13px;
+    }
+    #walletText h3{
+        font-size: 14px;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #headingText{
+        font-size: 24px;
+    }
+    #headingTextHr{
+        width: 130px;
+    }
+    #imageSize{
+        height: 120px;
+        width: 120px;
+    }
+    #textImage h1{
+        font-size: 15px;
+    }
+    #textIcon h1 i{
+        font-size: 70px;
+    }
+    #textIcon h1{
+        font-size: 19px;
+    }
+    #logoSize{
+        height: 100px;
+    }
+    .btn ,.btn-dark,.btn-primary,.btn-danger{
+        padding: 7px;
+        font-size: 14px;
+    }
+    #input{
+        width: 80%;
+        
+    }
+    .form-group .form-control{
+       font-size: 14px;
+    }
+    #walletText h3{
+        font-size: 15px;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    #headingText{
+        font-size: 25px;
+    }
+    #headingTextHr{
+        width: 140px;
+    }
+    #imageSize{
+        height:150px;
+        width:150px;
+    }
+    #textImage h1{
+        font-size: 17px;
+    }
+    #textIcon h1 i{
+        font-size: 80px;
+    }
+    #textIcon h1{
+        font-size: 20px;
+    }
+    #logoSize{
+        height: 130px;
+    }
+    .btn ,.btn-dark,.btn-primary,.btn-danger{
+        padding: 10px;
+        font-size: 16px;
+    }
+    #input{
+        width: 80%;
+        
+    }
+    .form-group .form-control{
+       font-size: 15px;
+    }
+    #walletText h3{
+        font-size: 16px;
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    #headingText{
+        font-size: 25px;
+    }
+    #headingTextHr{
+        width: 140px;
+    }
+    #imageSize{
+        height:200px;
+        width:200px;
+    }
+    #textImage h1{
+        font-size: 17px;
+    }
+    #textIcon h1 i{
+        font-size: 80px;
+    }
+    #textIcon h1{
+        font-size: 20px;
+    }
+    #logoSize{
+        height: 130px;
+    }
+    .btn ,.btn-dark,.btn-primary,.btn-danger{
+        padding: 10px;
+        font-size: 16px;
+    }
+    #input{
+        width: 80%;
+        
+    }
+    .form-group .form-control{
+       font-size: 15px;
+    }
+    #walletText h3{
+        font-size: 16px;
+    }
+  
+  }

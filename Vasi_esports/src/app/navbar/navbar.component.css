@@ -1,0 +1,164 @@
+
+/*responsive css3  */
+
+/* Extra small devices (phones, 600px and down) */
+
+
+@media only screen and (max-width: 600px) {
+  
+   
+    #navBar{
+        position:fixed; background-image: linear-gradient(black,rgba(255,255,255,0));
+        height: 80px;
+      }
+      .example-button-row button,
+      .example-button-row a{
+       margin: 4px;
+    
+      
+      }
+      .example-button-row{
+          padding: 0px;
+          
+      }
+      .example-button-row button,
+      .example-button-row a h1{
+     
+      font-size: 15px;
+      }
+      .example-button-row button,
+      .example-button-row a h2{
+     
+      font-size: 10px;
+      }
+      #navbarTitle{
+          font-size:18px;
+          max-width: 0px;
+      }
+      #linkedin{
+          display: none;
+      }
+
+ }
+ 
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width:600px) {
+  
+    #navBar{
+        position:fixed; background-image: linear-gradient(black,rgba(255,255,255,0));
+        height: 100px;
+      }
+      .example-button-row button,
+      .example-button-row a{
+      margin: 6px;
+    
+      
+      }
+     
+      .example-button-row button,
+      .example-button-row a h1{
+     
+      font-size: 18px;
+      }
+      .example-button-row button,
+      .example-button-row a h2{
+     
+      font-size: 10px;
+      }
+      #navbarTitle{
+          font-size:25px;
+          max-width: 0px;
+      }
+     
+      
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+ 
+    #navBar{
+        position:fixed; background-image: linear-gradient(black,rgba(255,255,255,0));
+        height: 120px;
+      }
+      .example-button-row button,
+      .example-button-row a{
+      margin: 8px;
+    
+      
+      }
+     
+      .example-button-row button,
+      .example-button-row a h1{
+     
+      font-size: 18px;
+      }
+      .example-button-row button,
+      .example-button-row a h2{
+     
+      font-size: 10px;
+      }
+      #navbarTitle{
+          font-size:30px;
+          max-width: 0px;
+      }
+   
+ } 
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+   
+    #navBar{
+        position:fixed; background-image: linear-gradient(black,rgba(255,255,255,0));
+        height: 150px;
+    }
+    .example-button-row button,
+    .example-button-row a{
+        margin: 10px;
+        margin-right: 10px;
+    }
+    .example-button-row1 button,
+    .example-button-row1 a{
+        margin: 5px;
+        margin-right: 5px;
+    }
+    .example-button-row button,
+    .example-button-row a h2{
+   
+    font-size: 10px;
+    }
+    #navbarTitle{
+        font-size:40px; 
+        font: outline; font-variant: small-caps;
+    }
+    
+
+ } 
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    #navBar{
+        position:fixed; background-image: linear-gradient(black,rgba(255,255,255,0));
+        height: 150px;
+    }
+    .example-button-row button,
+    .example-button-row a{
+        margin: 10px;
+        margin-right: 10px;
+    }
+    .example-button-row1 button,
+    .example-button-row1 a{
+        margin: 5px;
+        margin-right: 5px;
+    }
+    .example-button-row button,
+    .example-button-row a h2{
+   
+    font-size: 10px;
+    }
+    #navbarTitle{
+        font-size:40px; 
+        font: outline; font-variant: small-caps;
+    }
+    
+    
+ }

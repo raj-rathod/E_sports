@@ -1,0 +1,142 @@
+#userData:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}
+
+#progressData:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}
+#matchData{
+    background: none;
+}
+#matchData:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}
+#imageSize{
+    height: 150px;
+    width: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+    #imageSize{
+        height: 80px;
+        width: 80px;
+    }
+    .userDataText ul li h2{
+        font-size: 15px;
+    }
+    #headingText{
+        font-size: 18px;
+    }
+    #headingTextHr{
+        width: 100px;
+    }
+    #hideCircle{
+        display: none;
+    }
+    #leaderIcon{
+        font-size: 50px;
+    }
+
+    
+  }
+  
+  @media only screen and (min-width:600px) {
+    #imageSize{
+        height: 90px;
+        width: 90px;
+    }
+    .userDataText ul li h2{
+        font-size: 18px;
+    }
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 120px;
+    }
+    #hideCircle{
+        display: none;
+    }
+    #leaderIcon{
+        font-size: 60px;
+    } 
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #imageSize{
+        height: 120px;
+        width: 120px;
+    }
+    .userDataText ul li h2{
+        font-size: 18px;
+    }
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 120px;
+    }
+    #matchCircle{
+        display: inline;
+    }
+    #hideCircle{
+        display: none;
+    }
+    #leaderIcon{
+        font-size: 70px;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    #imageSize{
+        height: 150px;
+        width: 150px;
+    }
+    .userDataText ul li h2{
+        font-size: 20px;
+    }
+    #headingText{
+        font-size: 25px;
+    }
+    #headingTextHr{
+        width: 170px;
+    }
+    #matchCircle{
+        display: none;
+    }
+    #hideCircle{
+        display: inline;
+    }
+    #leaderIcon{
+        font-size: 80px;
+    }
+      
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    #imageSize{
+        height: 150px;
+        width: 150px;
+    }
+    .userDataText ul li h2{
+        font-size: 20px;
+    }
+    #headingText{
+        font-size: 25px;
+    }
+    #headingTextHr{
+        width: 170px;
+    }
+    #matchCircle{
+        display: none;
+    }
+    #hideCircle{
+        display: inline;
+    }
+    #leaderIcon{
+        font-size: 80px;
+    }
+      
+  }

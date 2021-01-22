@@ -1,0 +1,121 @@
+
+@media only screen and (max-width: 600px) {
+    #btnphoto{
+        background-color: rgba(19, 142, 151, 0.425);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100px;
+        width: 97%;
+        position: relative;
+    }
+    #btnphoto img{
+        height: 100px;
+    }
+    #btn{
+        position: absolute;
+        margin-left: 60%;
+        margin-top: 6%;
+        font-size: 15px;
+        font-family: 'Lucida Console', Courier, monospace;
+        color: rgb(121, 146, 31);
+    }
+   
+  }
+  
+  @media only screen and (min-width:600px) {
+   
+    #btnphoto{
+        background-color: rgba(19, 142, 151, 0.425);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 120px;
+        width: 97%;
+        position: relative;
+    }
+    #btnphoto img{
+        height: 120px;
+    }
+    #btn{
+        position: absolute;
+        margin-left: 60%;
+        margin-top: 5%;
+        font-size: 25px;
+        font-family: 'Lucida Console', Courier, monospace;
+        color: rgb(121, 146, 31);
+    }
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #btnphoto{
+        background-color: rgba(19, 142, 151, 0.425);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 130px;
+        width: 97%;
+        position: relative;
+    }
+    #btnphoto img{
+        height: 130px;
+    }
+    #btn{
+        position: absolute;
+        margin-left: 60%;
+        margin-top: 4%;
+        font-size: 30x;
+        font-family: 'Lucida Console', Courier, monospace;
+        color: rgb(121, 146, 31);
+    }
+     
+  }
+  
+  @media only screen and (min-width: 992px) {
+   
+    #btnphoto{
+        background-color: rgba(19, 142, 151, 0.425);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 150px;
+        width: 93%;
+        position: relative;
+    }
+    #btnphoto img{
+        height: 150px;
+    }
+    #btn{
+        position: absolute;
+        margin-left: 60%;
+        margin-top: 4%;
+        font-size: 40px;
+        font-family: 'Lucida Console', Courier, monospace;
+        color: rgb(121, 146, 31);
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    #btnphoto{
+        background-color: rgba(19, 142, 151, 0.425);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 150px;
+        width: 93%;
+        position: relative;
+    }
+    #btnphoto img{
+        height: 150px;
+    }
+    #btn{
+        position: absolute;
+        margin-left: 60%;
+        margin-top: 3%;
+        font-size: 50px;
+        font-family: 'Lucida Console', Courier, monospace;
+        color: rgb(121, 146, 31);
+    }
+  
+  }

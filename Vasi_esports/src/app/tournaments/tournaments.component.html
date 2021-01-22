@@ -1,0 +1,78 @@
+<div class="text-center text-white">
+    <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="headingText">Esports Tournaments</h1>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style=" height: 2px;" id="headingTextHr">
+</div>
+
+<div class="container">
+    <h1 class="text-white" style=" font-family: 'Lucida Console', Courier, monospace; " id="text">Upcoming </h1>
+    <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 100px; height: 2px;">
+</div>
+<div class="container">
+    <div class="card mb-2" id="tournamentCard"  *ngFor="let tournament of tournamentData" (click)="joinPage(tournament)">
+        <div class="row">
+            <div class="col-md-1 text-center" >
+                <img class="rounded-circle bg-dark" src="../../assets/image/poterPhoto.png" alt="Poster" height="70px" width="70px">
+            </div>
+            <div class="col-md-3">
+                <h1 class="text-center mt-2"><b>{{tournament.tournamentName}}</b><br><small>{{tournament.tournamentType}}</small></h1>
+            </div>
+            <div class="col-md-3">
+             <h4  class="text-center mt-2 text-white">Date : {{tournament.tournamentDate}} <br> <small class="text-center">Time : {{tournament.tournamentTime}}</small></h4>
+            
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-center mt-3 text-warning"> <b>Prize Pool :{{tournament.prizeMoney}}</b><br><small><b>Entry Fees :{{tournament.entryFees}}</b></small></h4>
+            </div>
+            <div class="col-md-2"> 
+             <h3 class="text-center text-danger mt-2">Registration Open <br> <small class="text-center text-warning">Sloat Avilable</small></h3>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<div class="container mt-4">
+    <h1 class="text-white" style=" font-family: 'Lucida Console', Courier, monospace; " id="text">Past </h1>
+    <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 50px; height: 2px;">
+</div>
+<div class="container">
+    <div class="card mb-2" id="tournamentPastCard" *ngFor = "let data of pastTournamentData" (click)="resultSet(data)">
+        <div class="row">
+            <div class="col-md-1 text-center" >
+                <img class="rounded-circle bg-dark" src="../../assets/image/poterPhoto.png" alt="Poster" height="70px" width="70px">
+            </div>
+            <div class="col-md-3">
+                <h1 class="text-center mt-2"><b>{{data.tournamentName}}</b></h1>
+            </div>
+            <div class="col-md-3">
+             <h4  class="text-center mt-2 text-white">Date : {{data.tournamentDate}}</h4>
+            
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-center mt-3 text-warning"> <b>Completed</b></h4>
+            </div>
+            <div class="col-md-2"> 
+             <h3 class="text-center text-danger mt-2">Winner Listed <br> <small class="text-center text-warning">Show Result</small></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h1 class="text-white" style=" font-family: 'Lucida Console', Courier, monospace; " id="text">Ongoing </h1>
+    <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 100px; height: 2px;">
+</div>
+<div class="container mb-4">
+    <div class="card" id="tournamentOnCard">
+        <div class="row">
+            <div class="col-md-1 text-center" >
+                <img class="rounded-circle bg-dark" src="../../assets/image/poterPhoto.png" alt="Poster" height="70px" width="70px">
+            </div>
+            <div class="col-md-5">
+                <h1 class="text-center text-white mt-2">Live Tournament </h1>
+            </div>
+            <div class="col-md-6 text-center">
+                <a class="bg-danger mt-3 "  mat-mini-fab href="https://www.youtube.com/channel/UCvMKKIO2K_esWu05I73vJOw" target="blank" ><h2><i class="fa fa-youtube"></i></h2>  </a>
+            </div>
+        </div>
+    </div>
+</div>

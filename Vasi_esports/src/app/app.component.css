@@ -1,0 +1,36 @@
+
+@media only screen and (max-width: 600px) {
+    #gapComponent{
+        margin-top: 80px;
+    }
+  }
+  
+  @media only screen and (min-width:600px) {
+      #gapComponent{
+          margin-top: 100px;
+      }
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+      #gapComponent{
+          margin-top: 120px;
+      }
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+      #gapComponent{
+          margin-top: 150px;
+      }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+      #gapComponent{
+          margin-top: 150px;
+      }
+  
+  }
+
+
+

@@ -1,0 +1,34 @@
+<div class="container mb-4">
+    <div class="text-center text-white">
+        <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="headingText">Your Room</h1>
+          <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" id="headingTextHr" style=" height: 2px;">
+      </div>
+    <div class="card" id="roomCard" >
+    <div class="card-header" id="roomHeader">
+        <img src="../../assets/image/roomposter.jpg"  width="100%"  alt="">
+    </div>
+    <div class="card-body">
+        <div class="card mb-2" id="roomidCard" *ngFor="let data of myData">
+            <div class="row">
+                <div class="col-md-4"><h1 class="text-white mt-2 ml-3"><b>{{data.tournamentName}}</b></h1></div>
+                <div class="col-md-3"><h3 class="text-white mt-3 ml-2">Date : {{data.tournamentDate}} <br><small>Time : {{data.tournamentTime}} </small></h3></div>
+                <div class="col-md-3"><h3 class="text-white mt-3 ml-2"><b>Room Id</b> <br> <small class="text-warning" *ngIf="data.roomId == null"><b>Not allocated</b></small><small class="text-warning" *ngIf="data.roomId != null"><b>{{data.roomId}}</b></small></h3></div>
+                <div class="col-md-2"><h3 class="text-white mt-3 ml-2"><b>Password</b> <br> <small class="text-warning" *ngIf="data.password == null"><b>Not allocated</b></small><small class="text-warning" *ngIf="data.password != null"><b>{{data.password}}</b></small></h3></div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <h1 style=" font-family: 'Lucida Console', Courier, monospace; font-size: 20px;" class="text-white">Contact  </h1>
+        <hr class="bg-primary mb-2 mt-0 d-inline-block mx-auto" style="width: 100px; height: 2px;"> 
+        
+        <p id="hideSocial">
+            <a class="bg-info mr-3" mat-mini-fab href="https://t.me/vasiesport"><h4><i class="fa fa-telegram" aria-hidden="true"></i></h4>  </a>
+          <a class="mr-3" mat-mini-fab href="https://www.instagram.com/vasi_esports/" target="blank"><h4><i class="fa fa-instagram"></i></h4>  </a>
+          <a class="bg-primary mr-3" mat-mini-fab href="https://www.facebook.com/VasiESport/?modal=admin_todo_tour" target="blank"><h4><i class="fa fa-facebook"></i></h4>  </a>
+          <a class="bg-danger mr-3 "  mat-mini-fab  href="https://www.youtube.com/channel/UCvMKKIO2K_esWu05I73vJOw" target="blank"><h4><i class="fa fa-youtube"></i></h4>  </a>
+        </p>
+        
+        
+    </div>
+    </div>
+</div>

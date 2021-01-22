@@ -1,0 +1,129 @@
+#sidenav{
+  background-color: rgba(105, 99, 5, 0.733);
+}
+  @media only screen and (max-width: 600px) {
+    #text{
+      font-size: 15px;
+    }
+    #iconSize{
+      font-size:20px;
+    }
+    .example-container {
+      background: transparent;
+     
+    }
+    .example-sidenav {
+      padding:8px;
+      background:transparent;
+    }
+   
+    #sidenavLink li{
+      border-radius: 3px;
+    }
+    #sidenavLink li:hover {
+       background: rgba(255,255,255,0.4);
+    }
+   
+  }
+  
+  @media only screen and (min-width:600px) {
+    #text{
+      font-size: 18px;
+    }
+    #iconSize{
+      font-size: 25px;
+    }
+    .example-container {
+      background: transparent;
+     
+    }
+    .example-sidenav {
+      padding: 20px;
+      background:transparent;
+    }
+   
+    #sidenavLink li{
+      border-radius: 3px;
+    }
+    #sidenavLink li:hover {
+       background: rgba(255,255,255,0.4);
+    }
+      
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #text{
+      font-size: 18px;
+    }
+    #iconSize{
+      font-size: 25px;
+    }
+
+    .example-container {
+      background: transparent;
+     
+    }
+    .example-sidenav {
+      padding: 20px;
+      background:transparent;
+    }
+   
+    #sidenavLink li{
+      border-radius: 3px;
+    }
+    #sidenavLink li:hover {
+       background: rgba(255,255,255,0.4);
+    }
+     
+  }
+  
+  @media only screen and (min-width: 992px) {
+    #text{
+      font-size: 20px;
+    }
+    #iconSize{
+      font-size: 30px;
+    }
+    .example-container {
+      background: transparent;
+     
+    }
+    .example-sidenav {
+      padding: 20px;
+      background:transparent;
+    }
+   
+    #sidenavLink li{
+      border-radius: 3px;
+    }
+    #sidenavLink li:hover {
+       background: rgba(255,255,255,0.4);
+    }
+     
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    #text{
+      font-size: 20px;
+    }
+    #iconSize{
+      font-size: 30px;
+    }
+    .example-container {
+      background: transparent;
+     
+    }
+    .example-sidenav {
+      padding: 20px;
+      background:transparent;
+    }
+   
+    #sidenavLink li{
+      border-radius: 3px;
+    }
+    #sidenavLink li:hover {
+       background: rgba(255,255,255,0.4);
+    }   
+  
+  }

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <div class="text-center mb-3">
+              <img  class="rounded-circle "  height="80" width="100"
+                src="../../assets/image/logts1.png" >
+            </div>
+            <form class="form-signin text-white"  #signInForm = "ngForm" (ngSubmit) = "signInForm.valid && onSubmit(signInForm)">
+              
+  <mat-form-field  appearance="fill" >
+    <mat-label class="text-white">Email</mat-label>
+    <input matInput #username = "ngModel" name="email" placeholder="Ex. Nougat" [(ngModel)]="adminInfo.email" required >
+    <mat-error *ngIf="signInForm.submitted && !username.valid"><h5>This field is required.</h5></mat-error>
+  </mat-form-field>
+  
+  <mat-form-field  appearance="fill" >
+    <mat-label class="text-white"> Password</mat-label>
+    <input matInput  #password="ngModel" name="password" [type]="hide ? 'password' : 'text'" [(ngModel)]="adminInfo.password" required >
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+     <i class="fa fa-eye-slash" *ngIf="hide"></i> <i *ngIf="!hide" class="fa fa-eye"></i>
+    </button>
+    <mat-error *ngIf="signInForm.submitted && password.errors">
+    <mat-error *ngIf="password.errors.required" ><h5>This field is required.</h5>.</mat-error>
+    </mat-error>
+  </mat-form-field>
+     <div class="text-danger" *ngIf=error>
+       <h4>{{errorMassage}}</h4>
+     </div>
+  
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+            </form>
+           
+             
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,46 @@
+
+  <div class="text-center text-white" id="heading">
+  <h1 style=" font-family: 'Lucida Console', Courier, monospace;">Tournaments</h1>
+    <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="height: 2px;">
+</div>
+<div class="container mb-5">
+    <div class="card text-white">
+        <div class="additional">
+          <div class="user-card " style="float: left;">
+              <img src="../../assets/image/poterPhoto.png" >
+          </div>
+          <div class="more-info text-center">
+            <div class="text-center mt-3 ">
+              <img  class="rounded-circle  text-center text-white"  alt=" " [height] = "50" [width] = "50" 
+              [src]="playerData.photoUrl" >
+              <h5 class="shadow " ><b>{{playerData.name}}</b></h5>
+              <h2 class="shadow "><b>Rank : 1<sup>st</sup> </b></h2>
+              <h5 class="shadow text-warning " id="hide"><b>Score : {{playerData.score}}</b></h5>
+    
+            </div>
+            <div class="text-center link">
+                <div class="btn btn-success"  routerLink="/tournaments" routerLinkActive = "active" > Tournaments </div>
+            </div>
+            <div class="stats">
+              <div >
+                  <div class="title">Matches</div>
+                  <i class="fa fa-gamepad"></i>
+                  <div class="value">{{playerData.matches}}</div>
+                </div>
+    
+              <div>
+                <div class="title">Kills</div>
+                <i class="fa fa-group"></i>
+                <div class="value">{{playerData.score}}</div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="general text-center">
+          <h1>Jane Doe</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
+          
+        </div>
+      </div>
+</div>

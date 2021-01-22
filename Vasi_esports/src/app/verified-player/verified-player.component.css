@@ -1,0 +1,20 @@
+#verificationCard{
+    background-color: rgba(8, 161, 135, 0.486);
+}
+
+#tournaments{
+    background-color: rgba(79, 209, 18, 0.671);
+}
+
+#playerCard{
+    background-color: rgba(12, 72, 141, 0.493);
+}
+#list li h3{
+  color: rgb(231, 214, 59);
+}
+#teamCard{
+    background-color: rgba(3, 17, 17, 0.664);
+}
+#teamCard:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}

@@ -1,0 +1,28 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side"  (mouseleave)="sidenavClose(drawer)" id="sidenav">
+   
+    <hr class="bg-danger " style="height: 3px;">
+      <ul style="list-style-type:none;" id="sidenavLink">
+        <li> <div class="text-dark mt-3 btn" routerLink="userhomepage" routerLinkActive = "active" (click)="homePage(drawer)"><i class="fa fa-home text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Home</b>  </div></li>
+        <li> <div class="text-dark  btn" routerLink="userparticipant" routerLinkActive = "active" (click)="playedGame(drawer)"><i class="fa fa-gamepad text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Matches</b> </div></li>
+        <li> <div class="text-dark  btn" routerLink="userwallet" routerLinkActive = "active" (click)="scoreBoard(drawer)"><i class="fa fa-desktop text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Wallet</b> </div></li>
+        <li> <div class="text-dark  btn" routerLink="userroomid" routerLinkActive = "active" (click)="leaderBoard(drawer)"><i class="fa fa-users text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Room Detail</b> </div></li>
+       
+        <li> <div class="text-dark  btn"  routerLink="/tournaments" routerLinkActive = "active"  (click)="progressBoard(drawer)"><i class="fa fa-spinner text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Tournaments</b> </div></li>
+        <hr>
+        <li> <div class="text-dark  btn"    (click)="logOut(drawer)"><i class="fa fa-sign-out text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text">LogOut</b> </div></li>
+        
+      </ul>
+       
+       
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+        <h2><i class="fa fa-bars text-warning">  Account</i></h2>
+    </button>
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>
+

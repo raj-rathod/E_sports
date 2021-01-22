@@ -1,0 +1,27 @@
+<div class="text-center text-white">
+    <h1 style=" font-family: 'Lucida Console', Courier, monospace;" id="headingText">Your Matches</h1>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" id="headingTextHr" style=" height: 2px;">
+  </div>
+<div class="container">
+    <div class="card" id="matchCardContainer">
+      <div class="card-header" id="matchHeader">
+        <img src="../../assets/image/roomposter.jpg" width="100%"  alt="">
+    </div>
+    <div class="card-body">
+      <div class="card mb-2"  id="matchCard" style="cursor: pointer;" (click)="registeredPlayer(data.tournamentId,data.tournamentType)" *ngFor ="let data of myData">
+        <div class="row">
+           <div class="col-md-3 "><h1 class="text-white mt-2 ml-3"><b>{{data.tournamentName}}</b></h1></div>
+           <div class="col-md-3 "><h2 class="text-white mt-2  ml-2"> Date : {{data.tournamentDate}} <br><small>Time : {{data.tournamentTime}}</small></h2></div>
+           <div class="col-md-3"><h2 class="text-white  mt-2  ml-2" >Fees : <small>{{data.entryFees}}</small> <small><h4 class="text-warning">{{data.transactionId}}</h4></small></h2></div>
+           <div class="col-md-3 "><h2 class="text-white mt-2  ml-2" >Joining Status <br> <small><h4 class="text-success">join</h4></small></h2></div>
+         
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="mt-4 mb-3 text-center btn btn-primary"  routerLink="/tournaments" routerLinkActive = "active"><b class="text-white"> Tournaments</b></div>
+    </div>
+     
+     
+    </div>
+</div>

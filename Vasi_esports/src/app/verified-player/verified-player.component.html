@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="text-center text-white">
+        <h1 style=" font-family: 'Lucida Console', Courier, monospace; font-size: 30px;"> Players List </h1>
+          <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 300px; height: 2px;">
+    </div>
+    <div class="card" id="verificationCard">
+        <div class="card-header" *ngIf=!playerListFlag >
+            <div class="card mb-2" id="tournaments" (click)="playerList(data)" style="cursor: pointer;" *ngFor="let data of matchData">
+                <div class="row" >
+                    <div class="col-md-3">
+                        <h1 class="text-center mt-2"><b>{{data.tournamentName}}</b></h1>
+                    </div>
+                    <div class="col-md-2">
+                     <h4  class="text-center mt-2 text-white">Date : {{data.tournamentDate}}<br> <small class="text-center">Time :{{data.tournamentTime}}</small></h4>
+                    
+                    </div>
+                    <div class="col-md-2">
+                        <h2 class="mt-2 "> <b>Participant</b></h2>
+                    </div>
+                    <div class="col-md-4"> 
+                        <h2 class="mt-2 "> <b>Enrty Fees : {{data.entryFees}} INR</b></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body" id="list">
+            <div class="text-center text-white" style="height: 200px;" *ngIf=!playerListFlag><h1 class="text-center mt-2"><b>Player List</b></h1></div>
+            <div *ngIf=playerListFlag >
+                <div class="btn btn-danger"(click)="match()">Matches</div>
+                <h3 class="text-center text-white"><b>{{playerData[0].tournamentName}}</b></h3>
+                <div class="card-columns" *ngIf="playerData[0].tournamentType =='Solo'">
+                    <div class="card" id="teamCard" *ngFor="let data of playerData; let i = index">
+                     <span class="badge badge-primary badge-pill p-2">{{i+1}}</span>
+                       <ul class="text-white">
+                           <li>{{data.pubgName}} </li>
+                       </ul> 
+                    </div>
+                </div>
+                <div class="card-columns" *ngIf="playerData[0].tournamentType == 'Dual'">
+                    <div class="card" id="teamCard" *ngFor="let data of playerData; let i = index">
+                     <span class="badge badge-primary badge-pill p-2">{{i+1}}</span>
+                       <ul class="text-white">
+                           <li>{{data.pubgName}} </li>
+                           <li>{{data.subPlayer.pubgName}} </li>
+                       </ul> 
+                    </div>
+                </div>
+                <div class="card-columns" *ngIf="playerData[0].tournamentType == 'Squad'">
+                    <div class="card" id="teamCard" *ngFor="let data of playerData; let i = index">
+                     <span class="badge badge-primary badge-pill p-2">{{i+1}}</span>
+                       <ul class="text-white">
+                           <li>{{data.pubgName}} </li>
+                           <li>{{data.subPlayer.player1.pubgName}} </li>
+                           <li>{{data.subPlayer.player2.pubgName}} </li>
+                           <li>{{data.subPlayer.player3.pubgName}} </li>
+                       </ul> 
+                    </div>
+                </div>
+            </div>
+            
+          
+        </div>
+    </div>
+</div>
+

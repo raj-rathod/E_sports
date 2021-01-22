@@ -1,0 +1,237 @@
+<div class="text-center text-white">
+    <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="headingText"> Entry Fees</h1>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="height: 2px;" id="headingTextHr">
+</div>
+<div class="container">
+    <div class="card" id="paymentCard"> 
+        <div class="card-header">
+               <div>
+                <a  class="btn btn-primary text-white" (click)="paymentMode()" *ngIf="hidepayment">Wallet </a>
+                <a  class=" ml-3 btn btn-outline-dark text-white active" (click)="paymentQrMode()" *ngIf = !paymentModeflag>Online Payment </a>
+                
+               </div>
+        </div>
+        <div *ngIf = !paymentModeflag>
+            <div class="card-body" id="textImage" *ngIf="hidepayment">
+                <div class="text-center mb-4">
+                    <img class="rounded-circle" src="../../assets/image/payment.jpg" id="imageSize" alt="">
+                </div>
+                <h1 class="text-warning mt-2"><b>Entry Fees : {{entryData.entryFees}}</b></h1>
+                <hr>
+            </div>
+           <div class="card-footer" >
+            <div class="btn btn-success"(click)="onlinePayment()"*ngIf="paymentbtn">Payment</div>
+              <div class="text-danger" *ngIf=error>
+                <h4>{{errorMassage}}</h4>
+              </div>
+              <form *ngIf="entryData.tournamentType == 'Solo'" #soloForm = "ngForm" (ngSubmit) = "soloForm.valid && joinSolo(soloForm)">
+                <div class="form-group">
+                    <label for="form" class="text-white">Pubg Name</label>
+                    <input  #pubgName= "ngModel" name="pubgName" placeholder="PubgName" class="form-control" [(ngModel)]="soloData.pubgName" required >
+                     <mat-error *ngIf="soloForm.submitted && !pubgName.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Email</label>
+                    <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="soloData.emailId" required >
+                    <mat-error *ngIf="soloForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" *ngIf="!paymentbtn">Join</button>
+                </div>
+               </form>
+               <form *ngIf="entryData.tournamentType == 'Dual'"  #dualForm = "ngForm" (ngSubmit) = "dualForm.valid && joinDual(dualForm)">
+                <div class="form-group">
+                    <label for="form" class="text-white">Pubg Name</label>
+                    <input  #pubgName= "ngModel" name="pubgName" placeholder="PubgName" class="form-control" [(ngModel)]="dualData.pubgName" required >
+                     <mat-error *ngIf="dualForm.submitted && !pubgName.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Email</label>
+                    <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="dualData.emailId" required >
+                    <mat-error *ngIf="dualForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Player Pubg Name</label>
+                    <input  #subPlayer = "ngModel" name="pubgName" placeholder="Player pubg name" class="form-control" [(ngModel)]="dualData.subPlayer.pubgName" required >
+                    <mat-error *ngIf="dualForm.submitted && !subPlayer.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Player Email</label>
+                    <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="dualData.subPlayer.emailId" required >
+                    <mat-error *ngIf="dualForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" *ngIf="!paymentbtn">Join</button>
+                </div>
+               </form>
+
+               <form *ngIf="entryData.tournamentType == 'Squad'"  #squadForm = "ngForm" (ngSubmit) = "squadForm.valid && joinSquad(squadForm)" >
+                <div class="form-group">
+                    <label for="form" class="text-white">Pubg Name</label>
+                    <input  #pubgName= "ngModel" name="pubgName" placeholder="PubgName" class="form-control" [(ngModel)]="squadData.pubgName" required >
+                     <mat-error *ngIf="squadForm.submitted && !pubgName.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Email</label>
+                    <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="squadData.emailId" required >
+                    <mat-error *ngIf="squadForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Player 1 Pubg Name</label>
+                    <input  #subPlayer = "ngModel" name="pubgName" placeholder="Player pubg name" class="form-control" [(ngModel)]="squadData.subPlayer.player1.pubgName" required >
+                    <mat-error *ngIf="squadForm.submitted && !subPlayer.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Player 1 Email</label>
+                    <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="squadData.subPlayer.player1.emailId" required >
+                    <mat-error *ngIf="squadForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Player 2 Pubg Name</label>
+                    <input  #subPlayer = "ngModel" name="pubgName" placeholder="Player pubg name" class="form-control" [(ngModel)]="squadData.subPlayer.player2.pubgName" required >
+                    <mat-error *ngIf="squadForm.submitted && !subPlayer.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Player 2 Email</label>
+                    <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="squadData.subPlayer.player2.emailId" required >
+                    <mat-error *ngIf="squadForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Player 3 Pubg Name</label>
+                    <input  #subPlayer = "ngModel" name="pubgName" placeholder="Player pubg name" class="form-control" [(ngModel)]="squadData.subPlayer.player3.pubgName" required >
+                    <mat-error *ngIf="squadForm.submitted && !subPlayer.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="form" class="text-white">Player 3 Email</label>
+                    <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="squadData.subPlayer.player3.emailId" required >
+                    <mat-error *ngIf="squadForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" *ngIf="!paymentbtn">Join</button>
+                </div>
+               </form>
+            
+           </div>
+       
+       </div>
+       <div *ngIf = paymentModeflag>
+        <div class="card-body" id="textIcon" *ngIf="hidepayment">
+            <h1 class="text-center"><i class="fa fa-desktop text-white mt-4" >&nbsp;&nbsp; </i></h1>
+            <h1 class="text-center mt-3 text-white" style=" font-family: 'Lucida Console', Courier, monospace; "><b>Balance : {{playerData.walletAmount}} INR </b></h1>
+           
+        </div>
+       <div class="card-footer">
+          <div id="walletText">
+            <h3 class="mt-2  text-white"> Enty Fees : <b  class="text-warning"> {{entryData.entryFees}}</b><br>Your Balance : <b  class="text-warning" *ngIf="playerData.walletAmount-entryData.entryFees >= 0"> {{playerData.walletAmount-entryData.entryFees}}</b><b  class="text-danger" *ngIf="playerData.walletAmount-entryData.entryFees < 0"> Not sufficient balance in your wallet please try another method for payment</b></h3>
+            <hr>
+            <a  *ngIf="playerData.walletAmount-entryData.entryFees < 0"  class="btn btn-primary mt-2 text-white" (click)="paymentQrMode()" >Qr Code payment</a> 
+            <div  *ngIf="playerData.walletAmount-entryData.entryFees >= 0">
+                <a  *ngIf="hidepayment"  class="btn btn-success mt-3 text-white" (click)="paymentDone(playerData,entryData)" >Payment</a> 
+                <div class="text-center text-dark" *ngIf="!hidepayment">
+            
+                </div>
+                
+               <div *ngIf="!hidepayment">
+                <div class="text-danger" *ngIf=error>
+                    <h4>{{errorMassage}}</h4>
+                  </div>
+                <form *ngIf="entryData.tournamentType == 'Solo'" #soloForm = "ngForm" (ngSubmit) = "soloForm.valid && joinSolo(soloForm)">
+                    <div class="form-group">
+                        <label for="form" class="text-white">Pubg Name</label>
+                        <input  #pubgName= "ngModel" name="pubgName" placeholder="PubgName" class="form-control" [(ngModel)]="soloData.pubgName" required >
+                         <mat-error *ngIf="soloForm.submitted && !pubgName.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Email</label>
+                        <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="soloData.emailId" required >
+                        <mat-error *ngIf="soloForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                   </form>
+                   <form *ngIf="entryData.tournamentType == 'Dual'"  #dualForm = "ngForm" (ngSubmit) = "dualForm.valid && joinDual(dualForm)">
+                    <div class="form-group">
+                        <label for="form" class="text-white">Pubg Name</label>
+                        <input  #pubgName= "ngModel" name="pubgName" placeholder="PubgName" class="form-control" [(ngModel)]="dualData.pubgName" required >
+                         <mat-error *ngIf="dualForm.submitted && !pubgName.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Email</label>
+                        <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="dualData.emailId" required >
+                        <mat-error *ngIf="dualForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Player Pubg Name</label>
+                        <input  #subPlayer = "ngModel" name="pubgName" placeholder="Player pubg name" class="form-control" [(ngModel)]="dualData.subPlayer.pubgName" required >
+                        <mat-error *ngIf="dualForm.submitted && !subPlayer.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Player Email</label>
+                        <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="dualData.subPlayer.emailId" required >
+                        <mat-error *ngIf="dualForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                   </form>
+    
+                   <form *ngIf="entryData.tournamentType == 'Squad'"  #squadForm = "ngForm" (ngSubmit) = "squadForm.valid && joinSquad(squadForm)" >
+                    <div class="form-group">
+                        <label for="form" class="text-white">Pubg Name</label>
+                        <input  #pubgName= "ngModel" name="pubgName" placeholder="PubgName" class="form-control" [(ngModel)]="squadData.pubgName" required >
+                         <mat-error *ngIf="squadForm.submitted && !pubgName.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Email</label>
+                        <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="squadData.emailId" required >
+                        <mat-error *ngIf="squadForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Player 1 Pubg Name</label>
+                        <input  #subPlayer = "ngModel" name="pubgName" placeholder="Player pubg name" class="form-control" [(ngModel)]="squadData.subPlayer.player1.pubgName" required >
+                        <mat-error *ngIf="squadForm.submitted && !subPlayer.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Player 1 Email</label>
+                        <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="squadData.subPlayer.player1.emailId" required >
+                        <mat-error *ngIf="squadForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Player 2 Pubg Name</label>
+                        <input  #subPlayer = "ngModel" name="pubgName" placeholder="Player pubg name" class="form-control" [(ngModel)]="squadData.subPlayer.player2.pubgName" required >
+                        <mat-error *ngIf="squadForm.submitted && !subPlayer.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Player 2 Email</label>
+                        <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="squadData.subPlayer.player2.emailId" required >
+                        <mat-error *ngIf="squadForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Player 3 Pubg Name</label>
+                        <input  #subPlayer = "ngModel" name="pubgName" placeholder="Player pubg name" class="form-control" [(ngModel)]="squadData.subPlayer.player3.pubgName" required >
+                        <mat-error *ngIf="squadForm.submitted && !subPlayer.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <label for="form" class="text-white">Player 3 Email</label>
+                        <input  #emailId = "ngModel" name="emailId" placeholder="registered email id" class="form-control" [(ngModel)]="squadData.subPlayer.player3.emailId" required >
+                        <mat-error *ngIf="squadForm.submitted && !emailId.valid"><h5>This field is required.</h5></mat-error>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                   </form>
+                   
+               </div>
+            </div>
+            
+           
+           
+          </div>
+       </div>
+   
+   </div>
+      
+    </div>
+
+</div>

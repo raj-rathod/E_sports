@@ -1,0 +1,147 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" id="userData">
+         
+           <div class="card-group">
+            <div class="card "  style="background: transparent; border: none;">
+              <div class="text-center text-white">
+                <img  class="rounded-circle  text-center text-white"  id="imageSize" alt=" "
+              [src]="playerData.photoUrl" >
+              <h3 class="  shadow"><b>{{playerData.name}}</b></h3>
+              </div>
+            </div>
+            <div class="card  text-white userDataText"  style="background: transparent; border: none;">
+              <ul style="list-style:none;">
+                <li>  <h2><b class="text-warning">Name : </b><b>{{playerData.name}} </b></h2> </li>
+                
+                <hr class="bg-primary  d-inline-block mx-auto" style="width: 190px; height: 1px;">
+                <li>  <h2><b class="text-warning">Coins:  </b><b>{{playerData.coins}}</b></h2> </li>
+                <hr class="bg-primary  d-inline-block mx-auto" style="width: 190px; height: 1px;">
+              </ul>
+              
+            </div>
+           </div>
+        </div>   
+        <div class="col-md-6" id="progressData">
+          <div class="text-center text-dark mt-2">
+            <h1 id="headingText"><b>Progress Board</b></h1>
+            <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" id="headingTextHr" style="height: 2px;">
+          </div>
+          <div class="card-group">
+            <div class="card text-center text-white" style="background: transparent; border: none;" id="matchCircle">
+             
+              <circle-progress 
+              [percent]="playerData.score/10"
+              [radius]="40"
+              [space]="4"
+              [unitsColor]="'#f5f0f3'"
+              [titleColor]="'#f5f0f3'"
+              [subtitleColor]="'#f5f0f3'"
+              [outerStrokeWidth]="8"
+              [innerStrokeWidth]="2"
+              [outerStrokeColor]="'#7CFC00'"
+              [innerStrokeColor]="'#00FFFF'"
+              [animation]="true"
+              [animationDuration]="300"
+       ></circle-progress>
+       <h3><b>Score </b></h3>
+            </div>
+            <div class="card text-center text-white" style="background: transparent; border: none;" id="matchCircle">
+              <circle-progress 
+              [percent]="playerData.score/10 - playerData.matches/20"
+              [radius]="40"
+              [space]="4"
+              [unitsColor]="'#f5f0f3'"
+              [titleColor]="'#f5f0f3'"
+              [subtitleColor]="'#f5f0f3'"
+              [outerStrokeWidth]="8"
+              [innerStrokeWidth]="2"
+              [outerStrokeColor]="'#FFD700'"
+              [innerStrokeColor]="'#0000FF'"
+              [animation]="true"
+              [animationDuration]="300"
+       ></circle-progress>
+       <h3><b>Gamer</b></h3>
+            </div>
+           
+            <div class="card text-center text-white" style="background: transparent; border: none;" id="hideCircle">
+             
+              <circle-progress 
+              [percent]="playerData.score/10"
+              [radius]="80"
+              [space]="8"
+              [unitsColor]="'#f5f0f3'"
+              [titleColor]="'#f5f0f3'"
+              [subtitleColor]="'#f5f0f3'"
+              [outerStrokeWidth]="12"
+              [innerStrokeWidth]="4"
+              [outerStrokeColor]="'#7CFC00'"
+              [innerStrokeColor]="'#00FFFF'"
+              [animation]="true"
+              [animationDuration]="300"
+       ></circle-progress>
+       <h3><b>Score </b></h3>
+            </div>
+            <div class="card text-center text-white" style="background: transparent; border: none;" id="hideCircle">
+              <circle-progress 
+              [percent]="playerData.score/10 - playerData.matches/20"
+              [radius]="80"
+              [space]="8"
+              [unitsColor]="'#f5f0f3'"
+              [titleColor]="'#f5f0f3'"
+              [subtitleColor]="'#f5f0f3'"
+              [outerStrokeWidth]="12"
+              [innerStrokeWidth]="4"
+              [outerStrokeColor]="'#FFD700'"
+              [innerStrokeColor]="'#0000FF'"
+              [animation]="true"
+              [animationDuration]="300"
+       ></circle-progress>
+       <h3><b>Gamer</b></h3>
+            </div>
+          </div>
+         
+         
+        </div>
+    </div>
+</div>
+
+<div class="container">
+ <div class="card-group">
+ 
+    <div class="card  text-white userDataText"  id="matchData" >
+      <div class="text-center text-dark mt-2">
+            <h1 id="headingText"><b>Scoreboard</b></h1>
+            <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto"  id="headingTextHr" style=" height: 2px;">
+      </div>
+      <ul style="list-style:none;">
+        <li>  <h2><b class="text-warning"> Score : </b><b>{{playerData.score}}</b></h2> </li>
+        <hr class="bg-primary mb-1 d-inline-block mx-auto" style="width: 190px; height: 1px;">
+        <li>  <h2><b class="text-warning">Kills : </b><b>{{playerData.score}}</b></h2> </li>
+        <hr class="bg-primary mb-1  d-inline-block mx-auto" style="width: 190px; height: 1px;">
+        <li>  <h2><b class="text-warning"> Matches:  </b><b>{{playerData.matches}}</b></h2> </li>
+        <hr class="bg-primary mb-1  d-inline-block mx-auto" style="width: 190px; height: 1px;">
+      </ul>
+      
+     </div>
+ 
+   
+   <div class="card text-white text-center" id="matchData" >
+    <div class="text-center text-dark mt-2">
+      <h1 id="headingText"><b>Leaderboard</b></h1>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" id="headingTextHr" style=" height: 2px;">
+    </div>
+    <div class="text-center userDataText">
+      <div class="rounded-circle"><i class="fa fa-user" id="leaderIcon"></i></div>
+      <hr class="bg-primary mb-1  d-inline-block mx-auto" style="width: 100px; height: 1px;">
+      <li style="list-style: none;">  <h2><b class="text-warning"> Rank:  </b><b> {{rank}}</b></h2> </li>   
+      <hr class="bg-primary mb-1  d-inline-block mx-auto" style="width: 100px; height: 1px;">      
+    </div>
+    <div class="example-button-row mb-2">
+       <a class="btn btn-primary text-white" routerLink="/tournaments" routerLinkActive = "active">Tournaments</a>
+      
+    </div>
+   </div>
+ </div>
+</div>
+

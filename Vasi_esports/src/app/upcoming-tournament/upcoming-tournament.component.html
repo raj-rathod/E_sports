@@ -1,0 +1,94 @@
+<div class="text-center text-white">
+    <h1 style=" font-family: 'Lucida Console', Courier, monospace;" id="headingText">Tournament Join</h1>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style=" height: 2px;" id="headingTextHr">
+</div>
+<div class="container">
+    <div class="card" style="background: transparent;">
+      <div class="card-header" id="tournamentCardHeader">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="text-white mt-2 ml-3"><b>{{tournamentData.tournamentName}}</b><br><small class="text-warning"><h4>Date : {{tournamentData.tournamentDate}} <br>Time : {{tournamentData.tournamentTime}}</h4></small></h1>
+                <div class="btn btn-outline-primary"  routerLink="/tournaments" routerLinkActive = "active" >Tournents</div>
+                <div class="btn btn-outline-success ml-3"  (click)="registeredPlayer(tournamentData)" >Joined</div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="background: transparent;">
+                 <h1 class="text-info mt-2 ml-5" *ngIf="tournamentData.tournamentType =='Solo'"> <b>Players</b> : <small class="text-white"><b>100</b></small><br><small class="text-warning"><h5>Registration Open</h5></small></h1>
+                  <h1 class="text-info mt-2 ml-5" *ngIf="tournamentData.tournamentType =='Dual'"> <b>Teams</b> : <small class="text-white"><b>50</b></small><br><small class="text-warning"><h5>Registration Open</h5></small></h1>
+                    <h1 class="text-info mt-2 ml-5" *ngIf="tournamentData.tournamentType =='Squad'"> <b>Teams</b> : <small class="text-white"><b>25</b></small><br><small class="text-warning"><h5>Registration Open</h5></small></h1>
+                 
+                 <div class="btn btn-outline-success card-footer" routerLink="/entry" routerLinkActive = "active"><b class="text-white">Join Tournament</b></div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="card-body" id="tournamentCardBody">
+          <div class="row">
+              <div class="col-md-8">
+                <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="text" class="text-white">Description </h1>
+                <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="height: 2px;" id="textHr"> 
+
+                <p class="text-white">*ASIA*SOLO*TPP*ERANGEL <br><br>
+
+                    IF YOU DON'T HAVE SQUAD DON'T WORRY U CAN JOIN OTHER PLAYERS <br>
+                    I YOU HAVE ANY QUESTION WHATSAPP ME ON THIS NO. (9711102705) <br><br>
+                    
+                    *MOBILE AND EMULATORS BOTH ARE ALLOWED <br><br>
+                    
+                    24th JUNE AT 7:30 P.M. <br><br>
+                    
+                    **ENTRY FEES=Rs 20/PER PLAYER**<br><br>
+                    
+                    **PAYMENT METHOD-Phone Pay Or Google Pay- 9711102705** <br><br>
+                    
+                    **FOR REGISTRATION- WHATSAAP ME (9711102705)* <br><br>
+                    
+                    *ROOM ID AND PASSWORD WILL BE GIVEN BY PRIVATE WHATSAPP GROUP
+                </p>
+              </div>
+              <div class="col-md-4">
+                <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="text" class="text-white">Prize System </h1>
+                <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="height: 2px;" id="textHr"> 
+
+                <p class="text-white">
+
+                * 1 KILL=18Rs <br><br>
+
+                * 2 KILL=36Rs <br><br>
+
+                * 3 KILL=54Rs <br><br>
+
+                MORE KILLS MORE MONEY <br><br>
+
+                HOW TO CLAIM FOR PRIZE(EVERYTHING ARE COMPULSORY) <br><br>
+
+               STEP1:- JUST TAKE A SCREENSHOT OF YOUR KILLS AFTER GAMES END. <br><br>
+
+               STEP2:- SEND ME THE SCREENSHOT IN UNDER 7 MINUTES AFTER GAMES END ON WHATSAPP NUMBER (9711102705) . <br><br> 
+                </p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-8">
+                <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="text" class="text-white">Rules </h1>
+                <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="height: 2px;" id="textHr"> 
+              </div>
+              <div class="col-md-4">
+                <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="text" class="text-white">Schedule </h1>
+                <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="height: 2px;" id="textHr"> 
+              </div>
+          </div>
+      </div>
+      <div class="card-footer" id="tournamentCardFooter">
+        <h1 style=" font-family: 'Lucida Console', Courier, monospace; font-size: 20px;" class="text-white">Contact  </h1>
+        <hr class="bg-primary mb-2 mt-0 d-inline-block mx-auto" style="width: 100px; height: 2px;"> 
+        <p>
+          <a class="bg-info mr-3" mat-mini-fab href="https://t.me/vasiesport"><h4><i class="fa fa-telegram" aria-hidden="true"></i></h4>  </a>
+          <a class="mr-3" mat-mini-fab href="https://www.instagram.com/vasi_esports/" target="blank"><h4><i class="fa fa-instagram"></i></h4>  </a>
+          <a class="bg-primary mr-3" mat-mini-fab href="https://www.facebook.com/VasiESport/?modal=admin_todo_tour" target="blank"><h4><i class="fa fa-facebook"></i></h4>  </a>
+          <a class="bg-danger mr-3 "  mat-mini-fab  href="https://www.youtube.com/channel/UCvMKKIO2K_esWu05I73vJOw" target="blank"><h4><i class="fa fa-youtube"></i></h4>  </a>
+        </p>
+        
+      </div>
+    </div>
+</div>

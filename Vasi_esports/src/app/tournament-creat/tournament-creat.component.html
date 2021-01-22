@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="text-center text-white">
+        <h1 style=" font-family: 'Lucida Console', Courier, monospace; font-size: 30px;"> Tournaments </h1>
+          <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 250px; height: 2px;">
+    </div>
+    <div class="card" id="tournamentCard">
+        <div class="card-header">
+         <a  class="btn btn-danger text-white" (click)="newTournament()" *ngIf=!tournamentFlag >New Tournament</a>
+         <a  class="btn btn-danger text-white"  (click)="CreateTournament()" *ngIf=tournamentFlag >Back</a>
+        </div>
+        <div class="card-body" *ngIf=!tournamentFlag >
+            <div class="card mb-1" id="tournaments" *ngFor = "let match of matchData">
+                <div class="row" >
+                    <div class="col-md-3">
+                        <h1 class="text-center mt-2"><b>{{match.tournamentName}}</b><br><small><small>Type :{{match.tournamentType}}</small></small></h1>
+                    </div>
+                    <div class="col-md-2">
+                     <h4  class="text-center mt-2 text-white">Date : {{match.tournamentDate}} <br> <small class="text-center">Time : {{match.tournamentTime}}</small></h4>
+                    
+                    </div>
+                    <div class="col-md-2">
+                        <h4 class="mt-2 text-warning"> <b>Prize : {{match.prizeMoney}} <br>Enrty Fees : {{match.entryFees}}</b></h4>
+                    </div>
+                    <div class="col-md-4"> 
+                        <div class="btn-group mt-2">
+                            
+                            <button type="button" class="btn btn-danger mr-4"(click)="deleteMatch(match._id)">Delete</button>
+                            <button type="button" class="btn btn-primary ml-2" (click)="publicMatch(match._id)">Public</button>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-white" >
+                <h1 *ngIf="matchData"  style="margin-top: 50px;" >Next Tournament</h1>
+            </div>
+        
+        </div>
+        <div class="card-footer" *ngIf=tournamentFlag >
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+                    <form id="form" #tournamentCreat = "ngForm" (ngSubmit) = "tournamentCreat.valid && onSubmit(tournamentCreat)">
+                        <div class=" text-white">
+                            <h1 style=" font-family: 'Lucida Console', Courier, monospace; font-size: 30px;">Create Tournament</h1>
+                            <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 300px; height: 2px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="text-white">Tournament Name</label>
+                            <input type="text" class="form-control" #tournamentName="ngModel" placeholder="Enter Name" [(ngModel)]="tournamentData.tournamentName" name="tournamentName" required>
+                            <mat-error *ngIf="tournamentCreat.submitted && !tournamentName.valid"><h4>This field is required.</h4></mat-error>
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="text-white">Tournament Type</label>
+                            <label class="radio-inline text-white btn btn-primary pd-3 ml-3">
+                              <input type="radio" name="tournamentType" #tournamentType = "ngModel" value="Solo" [(ngModel)]="tournamentData.tournamentType" checked> Solo
+                            </label>
+                            <label class="radio-inline  text-white btn btn-primary pd-3 ml-3">
+                              <input type="radio" name="tournamentType" #tournamentType = "ngModel" value="Dual" [(ngModel)]="tournamentData.tournamentType">Dual
+                            </label>
+                            <label class="radio-inline  text-white btn btn-primary pd-3 ml-3" >
+                              <input type="radio" name="tournamentType" #tournamentType= "ngModel" value="Squad" [(ngModel)]="tournamentData.tournamentType"> Squad
+                            </label>
+                           
+                          </div>
+                        <div class="form-group">
+                            <label for="Name" class="text-white">Tournament Date</label>
+                            <input type="date" class="form-control" #tournamentDate="ngModel" [(ngModel)]="tournamentData.tournamentDate" name="tournamentDate" required>
+                            <mat-error *ngIf="tournamentCreat.submitted && !tournamentDate.valid"><h4>This field is required.</h4></mat-error>
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="text-white">Tournament Time</label>
+                            <input type="text" class="form-control" #tournamentTime="ngModel" [(ngModel)]="tournamentData.tournamentTime" placeholder="12:00 AM IST" name="tournamentTime" required>
+                            <mat-error *ngIf="tournamentCreat.submitted && !tournamentTime.valid"><h4>This field is required.</h4></mat-error>
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="text-white">Enter Fees</label>
+                            <input type="text" class="form-control" #entryFees="ngModel" [(ngModel)]="tournamentData.entryFees"placeholder="Enter Entry Fees " name="entryFees" required>
+                            <mat-error *ngIf="tournamentCreat.submitted && !entryFees.valid"><h4>This field is required.</h4></mat-error>
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="text-white">Enter Prize </label>
+                            <input type="text" class="form-control" #prizeMoney="ngModel" [(ngModel)]="tournamentData.prizeMoney"placeholder="Enter Prize" name="prizeMoney" required>
+                            <mat-error *ngIf="tournamentCreat.submitted && !prizeMoney.valid"><h4>This field is required.</h4></mat-error>
+                        </div>
+                          
+                        <div class="text-danger mb-2" *ngIf=error>
+                            <h4>{{errorMassage}}</h4>
+                          </div>
+                          <button type="submit" class="btn btn-primary"  >Create</button>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+          
+        </div>
+
+    </div>
+</div>

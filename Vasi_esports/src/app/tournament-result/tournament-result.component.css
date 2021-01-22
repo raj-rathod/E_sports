@@ -1,0 +1,16 @@
+#resultCard{
+    background-color: rgba(27, 143, 114, 0.39);
+}
+
+#tournaments{
+    background-color: rgba(63, 190, 13, 0.664);
+}
+
+#userCard{
+    background-color: rgba(104, 105, 91, 0.63);
+}
+
+
+#userCard:hover {
+   background-color: rgba(14, 17, 16, 0.671); 
+}

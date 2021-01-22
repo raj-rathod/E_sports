@@ -1,0 +1,101 @@
+#walletCard{
+    background-color: rgba(20, 175, 129, 0.486);
+}
+#formCard:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}
+
+@media only screen and (max-width: 600px) {
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 150px;
+    }
+    #iconSize{
+        font-size: 50px;
+    }
+    #balanceText{
+        font-size: 18px;
+    }
+    #warningText{
+        font-size: 15px;
+    }
+  }
+  
+  @media only screen and (min-width:600px) {
+    #headingText{
+        font-size: 23px;
+    }
+    #headingTextHr{
+        width: 160px;
+    }
+    #iconSize{
+        font-size: 60px;
+    }
+    #balanceText{
+        font-size: 20px;
+    }
+    #warningText{
+        font-size: 16px;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #headingText{
+        font-size: 24px;
+    }
+    #headingTextHr{
+        width: 170px;
+    }
+    #iconSize{
+        font-size: 70px;
+    }
+    #balanceText{
+        font-size: 22px;
+    }
+    #warningText{
+        font-size: 18px;
+    }   
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    #headingText{
+        font-size: 26px;
+    }
+    #headingTextHr{
+        width: 190px;
+    }
+    #iconSize{
+        font-size: 90px;
+    }
+    #balanceText{
+        font-size: 25px;
+    }
+    #warningText{
+        font-size: 20px;
+    }   
+    
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    #headingText{
+        font-size: 26px;
+    }
+    #headingTextHr{
+        width: 190px;
+    }
+    #iconSize{
+        font-size: 90px;
+    }
+    #balanceText{
+        font-size: 25px;
+    }
+    #warningText{
+        font-size: 20px;
+    }   
+      
+  
+}

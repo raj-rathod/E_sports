@@ -1,0 +1,29 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side"  (mouseleave)="sidenavClose(drawer)" >
+      <div class="text-center">
+      
+                    <h2><b>Admin </b></h2>
+      </div>
+      <hr class="bg-danger " style="height: 3px;">
+        <ul style="list-style-type:none;" id="sidenavLink">
+          <li> <div class="text-dark mt-3 btn" routerLink="adminhome" routerLinkActive = "active" (click)="homePage(drawer)"><i class="fa fa-home text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Home</b>  </div></li>
+          <li> <div class="text-dark  btn" routerLink="tournamentcreat" routerLinkActive = "active" (click)="playedGame(drawer)"><i class="fa fa-gamepad text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text">Create Match</b> </div></li>
+          <li> <div class="text-dark  btn" routerLink="tournamentverification" routerLinkActive = "active" (click)="scoreBoard(drawer)"><i class="fa fa-user text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text" > Matches Activity</b> </div></li>
+          <li> <div class="text-dark  btn" routerLink="tournamentresult" routerLinkActive = "active" (click)="leaderBoard(drawer)"><i class="fa fa-users text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Result Declaration</b> </div></li>
+          <li> <div class="text-dark  btn" routerLink="walletrequest" routerLinkActive = "active" (click)="scoreBoard(drawer)"><i class="fa fa-desktop text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text">Wallet Money</b> </div></li>
+          <li> <div class="text-dark  btn" routerLink="verifiedplayer" routerLinkActive = "active" (click)="scoreBoard(drawer)"><i class="fa fa-user text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Players</b> </div></li>
+          <li> <div class="text-dark  btn"  routerLink="/tournaments" routerLinkActive = "active"  (click)="progressBoard(drawer)"><i class="fa fa-spinner text-dark" id="iconSize">&nbsp;&nbsp; </i><b id="text"> Tournaments</b> </div></li>
+          
+        </ul>
+         
+         
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+          <h2><i class="fa fa-bars text-primary">  Admin</i></h2>
+      </button>
+      <router-outlet></router-outlet>
+    </div>
+  
+  </mat-drawer-container>

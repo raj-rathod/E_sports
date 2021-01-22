@@ -1,0 +1,157 @@
+#tournamentCard{
+    background-color: rgba(11, 140, 163, 0.527);
+    cursor: pointer;
+}
+#tournamentCard:hover {
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+  }
+
+#tournamentPastCard{
+    background-color: rgba(232, 238, 143, 0.473);
+    cursor: pointer;
+}
+#tournamentPastCard:hover {
+    background-image: linear-gradient(rgba(3, 62, 77, 0.521),rgba(126, 29, 121, 0.685));
+}
+
+#tournamentOnCard{
+    background-color: rgba(16, 143, 64, 0.473);
+    cursor: pointer;
+}
+#tournamentOnCard:hover {
+    background-image: linear-gradient(rgba(3, 62, 77, 0.521),rgba(202, 111, 26, 0.603));
+}
+
+@media only screen and (max-width: 600px) {
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 200px;
+    }
+    #text{
+        font-size: 17px;
+    }
+    #tournamentCard .row h1{
+        font-size: 17px;
+    }
+    #tournamentCard .row h4{
+        font-size: 15px;
+    }
+
+    #tournamentPastCard .row h1{
+        font-size: 17px;
+    }
+    #tournamentPastCard .row h4,h3{
+        font-size: 15px;
+    }
+    #tournamentOnCard .row h1{
+        font-size: 20px;
+    }
+    
+    .card .row .col-md-3,.col-md-2,.mt-3,.mt-2{
+        padding: 0px;
+        margin: 0px;
+    }
+
+   
+  }
+  
+  @media only screen and (min-width:600px) {
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 200px;
+    }
+    #text{
+        font-size: 17px;
+    }
+    #tournamentCard .row h1{
+        font-size: 17px;
+    }
+    #tournamentCard .row h4{
+        font-size: 15px;
+    }
+
+    #tournamentPastCard .row h1{
+        font-size: 17px;
+    }
+    #tournamentPastCard .row h4,h3{
+        font-size: 15px;
+    }
+    #tournamentOnCard .row h1{
+        font-size: 20px;
+    }
+    
+    .card .row .col-md-3,.col-md-2,.mt-3,.mt-2{
+        padding: 0px;
+        margin: 0px;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #headingText{
+        font-size: 23px;
+    }
+    #headingTextHr{
+        width: 230px;
+    }
+    #text{
+        font-size: 19px;
+    }
+    #tournamentCard .row h1{
+        font-size: 17px;
+    }
+    #tournamentCard .row h4{
+        font-size: 15px;
+    }
+
+    #tournamentPastCard .row h1{
+        font-size: 17px;
+    }
+    #tournamentPastCard .row h4,h3{
+        font-size: 15px;
+    }
+    #tournamentOnCard .row h1{
+        font-size: 20px;
+    }
+    
+    
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    #headingText{
+        font-size: 25px;
+    }
+    #headingTextHr{
+        width: 250px;
+    }
+    #text{
+        font-size: 20px;
+    }
+    #tournamentCard .row h1{
+        font-size: 20px;
+    }
+    #tournamentCard .row h4{
+        font-size: 18px;
+    }
+
+    #tournamentPastCard .row h1{
+        font-size: 20px;
+    }
+    #tournamentPastCard .row h4,h3{
+        font-size: 18px;
+    }
+    #tournamentOnCard .row h1{
+        font-size: 25px;
+    }
+    
+  }
+  
+  @media only screen and (min-width: 1200px) {
+      
+  
+  }

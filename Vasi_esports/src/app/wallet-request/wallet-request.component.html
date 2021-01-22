@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="text-center text-white">
+        <h1 style=" font-family: 'Lucida Console', Courier, monospace; font-size: 30px;"> Money Verification </h1>
+          <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 300px; height: 2px;">
+    </div>
+    <div class="card" id="moneyCard">
+        <div class="card-header">
+            <h1 class="text-center"><i class="fa fa-desktop text-white mt-4" style="font-size:100px;">&nbsp;&nbsp; </i></h1>
+            <h1 class="text-center mt-3 text-white" style=" font-family: 'Lucida Console', Courier, monospace; font-size:25px;"><b>Total  Requests </b></h1>
+        </div>
+        <div class="card-body"  *ngIf="!verificationflag">
+            
+            <div class="card mb-2" *ngFor="let request of requestData" >
+               <div class="row">
+                   <div class="col-md-2">
+                      <h5 class="ml-2 mt-1"><b>{{request.email}}</b></h5>
+                   </div>
+                   <div class="col-md-2">
+                    <h5 class=" mt-1"><b>{{request.contact}}</b></h5>
+                   </div>
+                   <div class="col-md-1">
+                    <h5 class=" mt-1"><b>{{request.amount}}</b></h5>
+                   </div>
+                   <div class="col-md-2"><h5 class="ml-2 mt-1"><b>{{request.paymentType}}</b></h5></div>
+                   <div class="col-md-2">
+                    <h5 class=" mt-1"><b>{{request.upiId}}</b></h5>
+                   </div>
+                   <div class="col-md-3">
+                    <div class="btn-group mt-1">
+                        <button type="button" class="btn btn-primary mr-1" (click)="paymentVerification(request.email)"><i class="fa fa-check"></i></button>
+                        <button type="button" class="btn btn-success ml-1" (click)="paymentDone(request)"><i class="fa fa-rupee"></i></button>
+                        <button type="button" class="btn btn-danger ml-1" (click)="requestCancle(request._id)"><i class="fa fa-trash"></i></button>
+                        
+                      </div>
+                   </div>
+
+               </div>
+            </div>
+        </div>
+        <div class="card-footer"  *ngIf="verificationflag">
+            <div class="card-group">
+                <div class="card "  style="background: transparent; border: none;">
+                  <div class="text-center text-white">
+                    
+                  <h3 class="  shadow mb-3 "><b>{{playerData.name}}</b></h3>
+                  <div class="btn btn-danger ml-3 mr-3" (click)="backBtn()">Back</div>
+                  <p class="mt-4">Note : Press Payment button if you done this payment</p>
+                  </div>
+                </div>
+                <div class="card  text-white userDataText"  style="background: transparent; border: none;">
+                  <ul style="list-style:none;">
+                    <li>  <h2><b class="text-warning">Name : </b><b>{{playerData.name}} </b></h2> </li>
+                    
+                    <hr class="bg-primary  d-inline-block mx-auto" style="width: 190px; height: 1px;">
+                    <li>  <h2><b class="text-warning">Wallet Money:  </b><b>{{playerData.walletAmount}}</b></h2> </li>
+                    <hr class="bg-primary  d-inline-block mx-auto" style="width: 190px; height: 1px;">
+                  </ul>
+                  
+                </div>
+               </div>
+        </div>
+    </div>
+</div>

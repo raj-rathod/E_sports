@@ -1,0 +1,139 @@
+#resultCardHeader{
+    background-color: rgba(75, 131, 94, 0.418);
+}
+#resultCardHeader:hover{
+    
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}
+
+#resultCardBody{
+    
+    background-color: rgba(48, 102, 95, 0.26);
+}
+
+#resultCardBody:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}
+
+#firstCard{
+   background-color: rgba(2, 41, 53, 0.466); 
+}
+
+#secondCard{
+    background-color: rgba(24, 182, 194, 0.548);
+}
+
+#thirdCard{
+    background-color: rgba(22, 190, 190, 0.548);
+}
+#winnerCard{
+    background-color: rgba(5, 32, 28, 0.651);
+    
+}
+#winnerCard h4{
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    color: rgba(221, 207, 10, 0.986);
+}
+
+@media only screen and (max-width: 600px) {
+    #headingText{
+        font-size: 18px;
+    }
+    #headingTextHr{
+        width: 150px;
+    }
+    #resultCardHeader h1{
+        font-size: 15px;
+    }
+    #firstCard,#secondCard,#thirdCard h1{
+        font-size: 15px;
+    }
+    #winnerCard h4{
+        font-size: 15px;
+    }
+    .btn,.btn-outline-primary{
+        padding: 3px;
+        font-size: 13px;
+    }
+  
+
+  }
+  
+  @media only screen and (min-width:600px) {
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 160px;
+    }
+    #resultCardHeader h1{
+        font-size: 16px;
+    }
+    #firstCard,#secondCard,#thirdCard h1{
+        font-size: 16px;
+    }
+    #winnerCard h4{
+        font-size: 16px;
+    }
+   
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #headingText{
+        font-size: 22px;
+    }
+    #headingTextHr{
+        width: 170px;
+    }
+    #resultCardHeader h1{
+        font-size: 18px;
+    }
+    #firstCard,#secondCard,#thirdCard h1{
+        font-size: 18px;
+    }
+    #winnerCard h4{
+        font-size: 18px;
+    }
+   
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    #headingText{
+        font-size: 25px;
+    }
+    #headingTextHr{
+        width: 180px;
+    }
+    #resultCardHeader h1{
+        font-size: 20px;
+    }
+    #firstCard,#secondCard,#thirdCard h1{
+        font-size: 20px;
+    }
+    #winnerCard h4{
+        font-size: 20px;
+    }
+   
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    #headingText{
+        font-size: 25px;
+    }
+    #headingTextHr{
+        width: 180px;
+    }
+    #resultCardHeader h1{
+        font-size: 20px;
+    }
+    #firstCard,#secondCard,#thirdCard h1{
+        font-size: 20px;
+    }
+    #winnerCard h4{
+        font-size: 20px;
+    }
+  
+  }

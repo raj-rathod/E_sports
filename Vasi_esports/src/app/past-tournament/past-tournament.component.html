@@ -1,0 +1,56 @@
+<div class="text-center text-white">
+    <h1 style=" font-family: 'Lucida Console', Courier, monospace;" id="headingText">Tournament Result</h1>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style=" height: 2px;" id="headingTextHr">
+</div>
+<div  class="container">
+    <div class="card " style="background: transparent;">
+        <div class="card-header" id="resultCardHeader" >
+            <div class="btn btn-outline-primary text-white"  routerLink="/tournaments" routerLinkActive = "active" >Tournents</div>
+                 <h1 class="text-white text-center"><b>{{tournamentdata.tournamentName}}</b></h1>
+                 <br>
+
+                 <div class="row " id="show">
+                    
+                    <div class="col-md-4">
+                       <h1 style=" font-family: 'Lucida Console', Courier, monospace; " class="text-center text-white"><b>1<sup>st</sup></b> </h1>
+                  
+                        <div class="card"  id="firstCard">
+                            <h1 class="text-white ml-5 mt-2 "> <b>{{resultData[0].name}}</b><br><small><h3 class="text-warning">Rank : {{resultData[0].rank}}<br> Score : {{resultData[0].kill}} kills <br> Prize : {{resultData[0].prize}} INR</h3></small></h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <br>
+                       <h1 style=" font-family: 'Lucida Console', Courier, monospace; " class="text-center text-white"><b>2<sup>nd</sup></b> </h1>
+                        <div class="card"  id="secondCard">
+                           <h1 class="text-white mt-2 ml-5"> <b>{{resultData[1].name}}</b><br><small><h3 class="text-warning">Rank : {{resultData[1].rank}} <br> Score : {{resultData[1].kill}} kills <br> Prize : {{resultData[1].prize}} INR</h3></small></h1>
+                       </div>
+                    </div>
+                    <div class="col-md-4">
+                       <br>
+                      <h1 style=" font-family: 'Lucida Console', Courier, monospace; " class="text-center text-white"><b>3<sup>rd</sup></b> </h1>
+                       <div class="card "  id="thirdCard">
+                          <h1 class="text-white mt-2 ml-5"> <b>{{resultData[2].name}}</b><br><small><h3 class="text-warning">Rank : {{resultData[2].rank}}<br> Score : {{resultData[2].kill}}kills <br> Prize :{{resultData[2].prize}} INR</h3></small></h1>
+                      </div>
+                   </div>
+                </div>
+        </div>
+        <div class="card-body" id="resultCardBody">
+            <div class="text-center text-white">
+                <h1 style=" font-family: 'Lucida Console', Courier, monospace; font-size: 20px;">Winner List</h1>
+                  <hr class="bg-primary mb-2 mt-0 d-inline-block mx-auto" style="width: 120px; height: 2px;">
+                 
+            </div>
+            <div class="card" style="background: transparent;">
+                <div class="card-header" id="winnerCard" >
+                    <h4>Name &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Kill &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prize</h4>  
+                 </div>
+                <div class="card-header" id="winnerCard" *ngFor = "let data of resultData">
+                   <h4>{{data.name}} &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;{{data.kill}} &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.prize}} </h4>  
+                </div>
+               
+            </div>
+            
+        </div>
+    </div>
+</div>
+

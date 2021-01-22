@@ -1,0 +1,21 @@
+
+
+  <nav class="navbar  fixed-top" id="navBar"  >
+    <div class="container-fluid">
+           <div class="navbar-header">
+             <a routerLink="/admin" routerLinkActive = "active"  class="navbar-brand"><h1 class="text-white"  id="navbarTitle"
+             >{{title}}</h1></a>
+           </div>
+          
+             
+           <div class="example-button-row nav nav-link"  >
+            <a class="bg-dark " mat-mini-fab routerLink="/" routerLinkActive = "active" ><h1> <i class="fa fa-home"></i></h1></a>
+            <a class="bg-primary" mat-mini-fab href="https://www.facebook.com/VasiESport/?modal=admin_todo_tour" target="blank"><h1> <i class="fa fa-facebook-f"></i></h1></a>
+            <a class="bg-info" mat-mini-fab  id="linkedin" href="https://www.linkedin.com/in/vasi-esports-5112611b0/" target="blank"><h1> <i class="fa fa-linkedin"></i></h1></a>
+            <a mat-mini-fab href="https://www.instagram.com/vasi_esports/" target="blank"><h1> <i class="fa fa-instagram"></i></h1></a>
+            <a mat-mini-fab color="primary" routerLink="/userprofile" routerLinkActive = "active" *ngIf = "auth.loggedIn()"><h1> <i class="fa fa-user-circle"></i></h1></a>
+            <a mat-mini-fab class="bg-primary" routerLink="/registration" routerLinkActive = "active" *ngIf = "!auth.loggedIn()"><h2> <b>Log In</b></h2></a>
+           </div>  
+        
+    </div>
+  </nav>

@@ -1,0 +1,112 @@
+#roomCard{
+    background-color: rgba(90, 207, 188, 0.445);
+}
+#roomHeader{
+   
+    padding: 0px;
+    border-radius: 5px;
+
+}
+
+#roomidCard{
+  background-color: rgba(24, 155, 46, 0.555);
+}
+
+#roomCard:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}
+
+#roomidCard:hover{
+    background-image: linear-gradient(rgba(1, 101, 148, 0.918),rgba(170, 12, 47, 0.336));  
+}
+
+@media only screen and (max-width: 600px) {
+   
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 150px;
+    }
+    #roomidCard .row h1{
+        font-size: 18px;
+    }
+    #roomidCard .row h3{
+        font-size: 15px;
+    }
+  }
+  
+  @media only screen and (min-width:600px) {
+   
+    #headingText{
+        font-size: 23px;
+    }
+    #headingTextHr{
+        width: 160px;
+    }
+    #roomidCard .row h1{
+        font-size: 19px;
+    }
+    #roomidCard .row h3{
+        font-size: 16px;
+    }
+      
+  }
+  
+  @media only screen and (min-width: 768px) {
+   #roomHeader img{
+       height: 150px;
+   }
+    #headingText{
+        font-size: 23px;
+    }
+    #headingTextHr{
+        width: 160px;
+    }
+    #roomidCard .row h1{
+        font-size: 19px;
+    }
+    #roomidCard .row h3{
+        font-size: 16px;
+    }
+      
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    #roomHeader img{
+        height: 170px;
+    }
+     #headingText{
+         font-size: 25px;
+     }
+     #headingTextHr{
+         width: 160px;
+     }
+     #roomidCard .row h1{
+         font-size: 20px;
+     }
+     #roomidCard .row h3{
+         font-size: 18px;
+     }
+     
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    #roomHeader img{
+        height: 170px;
+    }
+     #headingText{
+         font-size: 25px;
+     }
+     #headingTextHr{
+         width: 160px;
+     }
+     #roomidCard .row h1{
+         font-size: 20px;
+     }
+     #roomidCard .row h3{
+         font-size: 18px;
+     }
+  
+  }

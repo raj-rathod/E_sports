@@ -1,0 +1,9 @@
+#participant{
+    background-color: rgba(11, 120, 124, 0.596);
+}
+#teamCard{
+    background-color: rgba(3, 17, 17, 0.664);
+}
+#teamCard:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}

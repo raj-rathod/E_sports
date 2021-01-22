@@ -1,0 +1,106 @@
+#matchCardContainer{
+    background-color: rgba(122, 228, 201, 0.329);
+}
+
+#matchCard{
+    background-color: rgba(17, 82, 119, 0.527);
+}
+
+#matchCard:hover{
+    background-image: linear-gradient(rgb(13, 105, 78),rgba(192, 32, 32, 0.541));
+}
+
+#matchHeader{
+    padding: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    #headingText{
+        font-size: 20px;
+    }
+    #headingTextHr{
+        width: 150px;
+    }
+    #matchCard .row .col-md-3 h1{
+        font-size: 18px;
+    }
+    #matchCard .row .col-md-3 h2{
+        font-size: 15px;
+    }
+   
+  }
+  
+  @media only screen and (min-width:600px) {
+    #headingText{
+        font-size: 23px;
+    }
+    #headingTextHr{
+        width: 170px;
+    }
+    #matchCard .row .col-md-3 h1{
+        font-size: 20px;
+    }
+    #matchCard .row .col-md-3 h2{
+        font-size: 18px;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    #headingText{
+        font-size: 25px;
+    }
+    #headingTextHr{
+        width: 180px;
+    }
+    #matchCard .row .col-md-3 h1{
+        font-size: 20px;
+    }
+    #matchCard .row .col-md-3 h2{
+        font-size: 18px;
+    }
+    #matchHeader img{
+        height: 150px;
+    }
+     
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    #headingText{
+        font-size: 28px;
+    }
+    #headingTextHr{
+        width: 190px;
+    }
+    #matchCard .row .col-md-3 h1{
+        font-size: 20px;
+    }
+    #matchCard .row .col-md-3 h2{
+        font-size: 18px;
+    }
+    #matchHeader img{
+        height: 200px;
+    }
+     
+     
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    #headingText{
+        font-size: 28px;
+    }
+    #headingTextHr{
+        width: 190px;
+    }
+    #matchCard .row .col-md-3 h1{
+        font-size: 20px;
+    }
+    #matchCard .row .col-md-3 h2{
+        font-size: 18px;
+    }
+    #matchHeader img{
+        height: 200px;
+    }
+      
+  }

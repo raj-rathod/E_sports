@@ -1,0 +1,69 @@
+<div class="text-center text-white">
+    <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="headingText">Your Wallet</h1>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" id="headingTextHr" style=" height: 2px;">
+  </div>
+<div class="container mb-3">
+    <div class="card" id="walletCard">
+
+     <div class="card-header">
+      <h1 class="text-center"><i class="fa fa-desktop text-white mt-4" id="iconSize">&nbsp;&nbsp; </i></h1>
+      <h1 class="text-center mt-3 text-white" style=" font-family: 'Lucida Console', Courier, monospace; " id="balanceText"><b>Balance : {{playerData.walletAmount}} INR </b></h1>
+     
+      <a  class="btn btn-primary text-white mb-4" (click)="requestForm()" *ngIf=!walletFlag><b>Money Withdraw Request</b></a>
+
+      <p *ngIf=!walletFlag class="text-white mt-3 ml-3"><b class="text-danger">Note :</b> Your money will send to you with in 48 hrs  after Money Withdraw Request<br>Our team  verify your deatil that you requested for Money withdraw  </p>
+     </div>
+          
+     <div class="card-body" *ngIf=walletFlag id="formCard">
+
+       <div class="row">
+         <div class="col-md-2">
+           <h5 *ngIf=errorFlag class="text-danger">{{errorMassage}}</h5>
+         </div>
+         <div class="col-md-8">
+          <h1 id="warningText" class="text-center text-white mb-3"><b>Fill All The Detail Correctly</b></h1>
+          <form id="form" #moneyForm = "ngForm" (ngSubmit) = "moneyForm.valid && onSubmit(moneyForm)">
+            <div class="form-group">
+              <label for="Name" class="text-white"> Email</label>
+              <input type="text" class="form-control"   #email ="ngModel" name="email"  placeholder="Registered email id" [(ngModel)]="moneyData.email"required>
+              <mat-error *ngIf="moneyForm.submitted && !email.valid"><h5>This field is required.</h5></mat-error>
+          </div>
+            <div class="form-group">
+                <label for="Name" class="text-white"> Amount</label>
+                <input type="text" class="form-control"   #amount ="ngModel" name="amount"  placeholder="2000" [(ngModel)]="moneyData.amount"required>
+                <mat-error *ngIf="moneyForm.submitted && !amount.valid"><h5>This field is required.</h5></mat-error>
+            </div>
+            <div class="form-group">
+              <label for="Name" class="text-white">Mobile</label>
+              <input type="text" class="form-control" #contact ="ngModel" name="contact"  placeholder="9148002717" [(ngModel)]="moneyData.contact"required>
+              <mat-error *ngIf="moneyForm.submitted && !contact.valid"><h5>This field is required.</h5></mat-error>
+          </div>
+          <div class="form-group">
+            <label class="radio-inline text-white btn">
+              <input type="radio" name="paymentType" #paymentType = "ngModel" value="Paytm" [(ngModel)]="moneyData.paymentType" checked> Paytm
+            </label>
+            <label class="radio-inline  text-white btn">
+              <input type="radio" name="paymentType" #paymentType = "ngModel" value="GooglePay" [(ngModel)]="moneyData.paymentType"> GooglePay
+            </label>
+            <label class="radio-inline  text-white btn">
+              <input type="radio" name="paymentType" #paymentType = "ngModel" value="PhonePay" [(ngModel)]="moneyData.paymentType"> PhonePay
+            </label>
+            <label class="radio-inline  text-white btn">
+              <input type="radio" name="paymentType" #paymentType = "ngModel" value="UPI" [(ngModel)]="moneyData.paymentType"> UPI 
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="Name" class="text-white">Paytm / GooglePay / PhonePay / Upi</label>
+            <input type="text" class="form-control" #upiId ="ngModel" name="upiId"  placeholder="paytm / GooglePay / PhonePay / Bhim" [(ngModel)]="moneyData.upiId"required>
+            <mat-error *ngIf="moneyForm.submitted && !upiId.valid"><h5>This field is required.</h5></mat-error>
+        </div>
+              <button type="submit" class="btn btn-primary"  >Submit</button>
+        </form>
+        <p class="text-white mt-3 ml-3"><b class="text-danger">Note :</b> Please fill all the valid details if your details are not valid then your request will cancled by our verifiation team <br>Please enter your valid mobile number our team contact to you through this number if your moblie number is not valid your request will cancle by our verification team  </p>
+         </div>
+         <div class="col-md-2"></div>
+       </div>
+     </div>
+    
+    </div>
+</div>

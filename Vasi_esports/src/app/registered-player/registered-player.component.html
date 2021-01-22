@@ -1,0 +1,45 @@
+<div class="text-center text-white">
+    <h1 style=" font-family: 'Lucida Console', Courier, monospace; " id="headingText">Participeted</h1>
+      <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style=" height: 2px;" id="headingTextHr">
+</div>
+<div class="container">
+    <div class="card" id="participant">
+        <div class="card-header text-center text-white">
+            <h3><b>{{participantData[0].tournamentName}}</b></h3>
+        </div>
+        <div class="card-body" *ngIf="participantData[0].tournamentType == 'Solo'">
+            <div class="card-columns">
+                <div class="card" id="teamCard" *ngFor="let data of participantData; let i = index">
+                 <span class="badge badge-primary badge-pill p-2">{{i+1}}</span>
+                   <ul class="text-white">
+                       <li>{{data.pubgName}} </li>
+                   </ul> 
+                </div>   
+            </div>
+        </div>
+        <div class="card-body" *ngIf="participantData[0].tournamentType == 'Dual'">
+            <div class="card-columns">
+                <div class="card" id="teamCard" *ngFor="let data of participantData; let i = index">
+                 <span class="badge badge-primary badge-pill p-2">{{i+1}}</span>
+                   <ul class="text-white">
+                       <li>{{data.pubgName}} </li>
+                       <li>{{data.subPlayer.pubgName}} </li>
+                   </ul> 
+                </div>   
+            </div>
+        </div>
+        <div class="card-body" *ngIf="participantData[0].tournamentType == 'Squad'">
+            <div class="card-columns">
+                <div class="card" id="teamCard" *ngFor="let data of participantData; let i = index">
+                 <span class="badge badge-primary badge-pill p-2">{{i+1}}</span>
+                   <ul class="text-white">
+                       <li>{{data.pubgName}} </li>
+                       <li>{{data.subPlayer.player1.pubgName}} </li>
+                       <li>{{data.subPlayer.player2.pubgName}} </li>
+                       <li>{{data.subPlayer.player3.pubgName}} </li>
+                   </ul> 
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>

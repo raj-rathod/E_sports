@@ -1,0 +1,565 @@
+
+ 
+  /*responsive css3  */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #heading h1{
+    font-size: 18px;
+  }
+
+  #heading hr{
+    width: 100px;
+  }
+  .card {
+    background: rgba(40, 103, 114, 0.4);
+    height: 250px;
+    width: 97%;
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.5);
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .card .additional {
+    position: absolute;
+    width: 140px;
+    height: 100%;
+    background: linear-gradient(rgba(40, 103, 114, 1), #EE786E);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  
+  
+  .card .additional .more-info {
+    width:200px;
+    float: left;
+    position: absolute;
+    left:140px;
+    height: 100%;
+  }
+  .card .additional .more-info .link{
+    margin-top: 0px;
+  }
+  .mt-3{
+    margin-top: 0.3rem;
+  }
+  .mt-2{
+    margin-top: 0.2rem;
+  }
+  .mt-5{
+    margin-top: 0.5rem;
+  }
+  #hide{
+    display: none;
+  }
+  .more-info h2{
+    font-size: 15px;
+  }
+  
+  .card .additional .stats {
+    font-size: 1rem;
+    display: flex;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    top: auto;
+    color: #fff;
+  }
+  
+  
+  
+  .card .additional .stats > div {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .card .additional .stats i {
+    display: block;
+  }
+  
+  .card .additional .stats div.title {
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .card .additional .stats div.value {
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 1rem;
+  }
+  
+  .card .general {
+   width:180px;
+    height: 100%;
+    position: absolute;
+  top: 0;
+  right: 0;
+   z-index: 1;
+    
+    padding: 1rem;
+    padding-top: 0;
+  }
+  .card .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+  }
+
+  .card .user-card img{
+    height: 250px;
+    width: 140px;
+  }
+  
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width:600px) {
+  #heading h1{
+    font-size: 20px;
+  }
+
+  #heading hr{
+    width: 150px;
+  }
+  .card {
+    background: rgba(40, 103, 114, 0.4);
+    height: 300px;
+    width: 97%;
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.5);
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .card .additional {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(rgba(40, 103, 114, 1), #EE786E);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  
+  
+  .card .additional .more-info {
+    width:300px;
+    float: left;
+    position: absolute;
+    left:200px;
+    height: 100%;
+  }
+ 
+  .more-info h2{
+    font-size: 15px;
+  }
+  
+  .card .additional .stats {
+    font-size: 1rem;
+    display: flex;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    top: auto;
+    color: #fff;
+  }
+  
+  
+  
+  .card .additional .stats > div {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .card .additional .stats i {
+    display: block;
+  }
+  
+  .card .additional .stats div.title {
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .card .additional .stats div.value {
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 1rem;
+  }
+  
+  .card .general {
+   width:250px;
+    height: 100%;
+    position: absolute;
+  top: 0;
+  right: 0;
+   z-index: 1;
+    
+    padding: 1rem;
+    padding-top: 0;
+  }
+  .card .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+  }
+
+  .card .user-card img{
+    height: 300px;
+    width: 200px;
+  }
+ 
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #heading h1{
+    font-size: 25px;
+  }
+
+  #heading hr{
+    width: 180px;
+  }
+  .card {
+    background: rgba(40, 103, 114, 0.4);
+    height: 350px;
+    width: 97%;
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.5);
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .card .additional {
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(rgba(40, 103, 114, 1), #EE786E);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  
+  
+  .card .additional .more-info {
+    width:400px;
+    float: left;
+    position: absolute;
+    left:250px;
+    height: 100%;
+  }
+ 
+  .more-info h2{
+    font-size: 15px;
+  }
+  
+  .card .additional .stats {
+    font-size: 1rem;
+    display: flex;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    top: auto;
+    color: #fff;
+  }
+  
+  
+  
+  .card .additional .stats > div {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .card .additional .stats i {
+    display: block;
+  }
+  
+  .card .additional .stats div.title {
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .card .additional .stats div.value {
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 1rem;
+  }
+  
+  .card .general {
+   width:300px;
+    height: 100%;
+    position: absolute;
+  top: 0;
+  right: 0;
+   z-index: 1;
+    
+    padding: 1rem;
+    padding-top: 0;
+  }
+  .card .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+  }
+
+  .card .user-card img{
+    height: 350px;
+    width: 250px;
+  }
+ 
+ 
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+ 
+  #heading h1{
+    font-size: 25px;
+  }
+
+  #heading hr{
+    width: 180px;
+  }
+  .card {
+    background: rgba(40, 103, 114, 0.4);
+    height: 300px;
+    width: 97%;
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.5);
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .card .additional {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(rgba(40, 103, 114, 1), #EE786E);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  
+  
+  .card .additional .more-info {
+    width:300px;
+    float: left;
+    position: absolute;
+    left:200px;
+    height: 100%;
+  }
+ 
+  .more-info h2{
+    font-size: 15px;
+  }
+  
+  .card .additional .stats {
+    font-size: 1rem;
+    display: flex;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    top: auto;
+    color: #fff;
+  }
+  
+  
+  
+  .card .additional .stats > div {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .card .additional .stats i {
+    display: block;
+  }
+  
+  .card .additional .stats div.title {
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .card .additional .stats div.value {
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 1rem;
+  }
+  
+  .card .general {
+   width:180px;
+    height: 100%;
+    position: absolute;
+  top: 0;
+  right: 0;
+   z-index: 1;
+    
+    padding: 1rem;
+    padding-top: 0;
+  }
+  .card .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+  }
+
+  .card .user-card img{
+    height: 300px;
+    width: 200px;
+  }
+ 
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #heading h1{
+    font-size: 30px;
+  }
+
+  #heading hr{
+    width: 200px;
+  }
+  
+  .card {
+    background: rgba(40, 103, 114, 0.4);
+    height: 400px;
+    width: 90%;
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.5);
+    position: relative;
+    margin: 1rem;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .card .additional {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(rgba(40, 103, 114, 1), #EE786E);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .card:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  
+  
+  .card .additional .more-info {
+    width:300px;
+    float: left;
+    position: absolute;
+    left: 450px;
+    height: 100%;
+  }
+  
+  .card .additional .stats {
+    font-size: 1rem;
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    color: #fff;
+  }
+  
+  
+  
+  .card .additional .stats > div {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .card .additional .stats i {
+    display: block;
+  }
+  
+  .card .additional .stats div.title {
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .card .additional .stats div.value {
+    font-size: 0.6rem;
+    font-weight: bold;
+    line-height: 1rem;
+  }
+  
+  .card .general {
+   width: 500px;
+    height: 100%;
+    position: absolute;
+  top: 0;
+  right: 0;
+   z-index: 1;
+    
+    padding: 1rem;
+    padding-top: 0;
+  }
+  .card .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+  }
+
+  .card .user-card img{
+    height: 400px;
+    width: 300px;
+  }
+  
+}
+  
+  
+  
+
+
+ 

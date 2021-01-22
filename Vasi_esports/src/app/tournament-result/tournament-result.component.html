@@ -1,0 +1,248 @@
+<div class="container">
+    <div class="text-center text-white">
+        <h1 style=" font-family: 'Lucida Console', Courier, monospace; font-size: 30px;"> Result Declaration </h1>
+          <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto" style="width: 300px; height: 2px;">
+    </div>
+    <div class="card" id="resultCard">
+        <div class="card-header">
+            <div class="card mb-2" id="tournaments" style="cursor: pointer;" (click)="tournamentSelect(data)" *ngFor="let data of matchData">
+                <div class="row" >
+                    <div class="col-md-3">
+                        <h1 class="text-center mt-2"><b>{{data.tournamentName}}</b></h1>
+                    </div>
+                    <div class="col-md-2">
+                     <h4  class="text-center mt-2 text-white">Date : {{data.tournamentDate}}<br> <small class="text-center">Time : {{data.tournamentTime}}</small></h4>
+                    
+                    </div>
+                    <div class="col-md-2">
+                        <h3 class="mt-2 text-warning"> <b>Prize :{{data.prizeMoney}}</b></h3>
+                    </div>
+                    <div class="col-md-4"> 
+                        <h2 class="mt-2 text-center "> <b>Completed</b></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+             <h1 class="text-center text-white mt-5" style="height: 200px;" *ngIf = !resultFlag> Please Select A tournament To Declare Result</h1> 
+            <div *ngIf="resultFlag" >
+                <div class="btn btn-danger"(click)="match()">Matches</div>
+                <h3 class="text-center text-white"><b>{{playerData[0].tournamentName}}</b></h3>
+                <div class="card-columns" *ngIf="playerData[0].tournamentType =='Solo'">
+                    <div class="card mb-2" id="userCard" *ngFor="let data of playerData; let i = index">
+                     <span class="badge badge-primary  badge-pill p-1">{{i+1}}</span>
+                        
+                               <div class="text-white mb-1" >{{data.pubgName}}</div>
+                               <form  #resultForm = "ngForm" (ngSubmit) = "resultForm.valid && onSubmit(resultForm,data)" >
+                                <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Rank</mat-label>
+                                    <input matInput type="number" #rank  name="rank" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !rank.valid"><h5>This field is required.</h5></mat-error>
+                                  </mat-form-field>
+                                    <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Kills </mat-label>
+                                    <input matInput #kill type="number" name="kill" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                    
+                                  </mat-form-field>
+                                  <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Prize </mat-label>
+                                    <input matInput #prize name="prize" type="number" placeholder="5000" ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                    
+                                  </mat-form-field>
+                                <button type="submit" class="btn  btn-success">Submit</button>
+                               </form>
+                               
+                           </div> 
+                       
+                   
+                </div>
+                <div class="text-white" *ngIf="playerData[0].tournamentType == 'Dual'">
+                    <div class="card" id="userCard" *ngFor="let data of playerData; let i = index">
+                     <span class="badge badge-primary badge-pill p-1">{{i+1}}</span>
+                     <div class="text-white mb-1" >{{data.pubgName}}</div>
+                     <form  #resultForm = "ngForm" (ngSubmit) = "resultForm.valid && onSubmit(resultForm,data)" class="mb-3" >
+                         <div class="row">
+                             <div class="col-md-3">
+                                <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Rank</mat-label>
+                                    <input matInput type="number" #rank  name="rank" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !rank.valid"><h5>This field is required.</h5></mat-error>
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-3">
+                                <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Kills </mat-label>
+                                    <input matInput #kill type="number" name="kill" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                    
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-3">
+                                <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Prize </mat-label>
+                                    <input matInput #prize name="prize" type="number" placeholder="5000" ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                    
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-3"> <button type="submit" class="btn  btn-success">Submit</button></div>
+                         </div>
+                       </form>
+                       <div class="text-white mb-1" >{{data.subPlayer.pubgName}}</div>
+                       <form  #resultForm = "ngForm" (ngSubmit) = "resultForm.valid && onDualSubmit(resultForm,data,data.subPlayer)" class="mb-3" >
+                           <div class="row">
+                               <div class="col-md-3">
+                                  <mat-form-field  appearance="fill">
+                                      <mat-label class="text-white">Rank</mat-label>
+                                      <input matInput type="number" #rank  name="rank" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                      <mat-error *ngIf="resultForm.submitted && !rank.valid"><h5>This field is required.</h5></mat-error>
+                                    </mat-form-field>
+                               </div>
+                               <div class="col-md-3">
+                                  <mat-form-field  appearance="fill">
+                                      <mat-label class="text-white">Kills </mat-label>
+                                      <input matInput #kill type="number" name="kill" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                      <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                      
+                                    </mat-form-field>
+                               </div>
+                               <div class="col-md-3">
+                                  <mat-form-field  appearance="fill">
+                                      <mat-label class="text-white">Prize </mat-label>
+                                      <input matInput #prize name="prize" type="number" placeholder="5000" ngModel required >
+                                      <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                      
+                                    </mat-form-field>
+                               </div>
+                               <div class="col-md-3"> <button type="submit" class="btn  btn-success">Submit</button></div>
+                           </div>
+                         </form>
+                    </div>
+                </div>
+                <div class="text-white" *ngIf="playerData[0].tournamentType == 'Squad'">
+                    <div class="card" id="userCard" *ngFor="let data of playerData; let i = index">
+                     <span class="badge badge-primary badge-pill p-2">{{i+1}}</span>
+                     <div class="text-white mb-1" >{{data.pubgName}}</div>
+                     <form  #resultForm = "ngForm" (ngSubmit) = "resultForm.valid && onSubmit(resultForm,data)" class="mb-3" >
+                         <div class="row">
+                             <div class="col-md-3">
+                                <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Rank</mat-label>
+                                    <input matInput type="number" #rank  name="rank" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !rank.valid"><h5>This field is required.</h5></mat-error>
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-3">
+                                <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Kills </mat-label>
+                                    <input matInput #kill type="number" name="kill" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                    
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-3">
+                                <mat-form-field  appearance="fill">
+                                    <mat-label class="text-white">Prize </mat-label>
+                                    <input matInput #prize name="prize" type="number" placeholder="5000" ngModel required >
+                                    <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                    
+                                  </mat-form-field>
+                             </div>
+                             <div class="col-md-3"> <button type="submit" class="btn  btn-success">Submit</button></div>
+                         </div>
+                       </form> 
+                       <div class="text-white mb-1" >{{data.subPlayer.player1.pubgName}}</div>
+                       <form  #resultForm = "ngForm" (ngSubmit) = "resultForm.valid && onDualSubmit(resultForm,data,data.subPlayer.player1)" class="mb-3" >
+                           <div class="row">
+                               <div class="col-md-3">
+                                  <mat-form-field  appearance="fill">
+                                      <mat-label class="text-white">Rank</mat-label>
+                                      <input matInput type="number" #rank  name="rank" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                      <mat-error *ngIf="resultForm.submitted && !rank.valid"><h5>This field is required.</h5></mat-error>
+                                    </mat-form-field>
+                               </div>
+                               <div class="col-md-3">
+                                  <mat-form-field  appearance="fill">
+                                      <mat-label class="text-white">Kills </mat-label>
+                                      <input matInput #kill type="number" name="kill" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                      <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                      
+                                    </mat-form-field>
+                               </div>
+                               <div class="col-md-3">
+                                  <mat-form-field  appearance="fill">
+                                      <mat-label class="text-white">Prize </mat-label>
+                                      <input matInput #prize name="prize" type="number" placeholder="5000" ngModel required >
+                                      <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                      
+                                    </mat-form-field>
+                               </div>
+                               <div class="col-md-3"> <button type="submit" class="btn  btn-success">Submit</button></div>
+                           </div>
+                         </form>
+                         <div class="text-white mb-1" >{{data.subPlayer.player2.pubgName}}</div>
+                         <form  #resultForm = "ngForm" (ngSubmit) = "resultForm.valid && onDualSubmit(resultForm,data,data.subPlayer.player2)" class="mb-3" >
+                             <div class="row">
+                                 <div class="col-md-3">
+                                    <mat-form-field  appearance="fill">
+                                        <mat-label class="text-white">Rank</mat-label>
+                                        <input matInput type="number" #rank  name="rank" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                        <mat-error *ngIf="resultForm.submitted && !rank.valid"><h5>This field is required.</h5></mat-error>
+                                      </mat-form-field>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <mat-form-field  appearance="fill">
+                                        <mat-label class="text-white">Kills </mat-label>
+                                        <input matInput #kill type="number" name="kill" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                        <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                        
+                                      </mat-form-field>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <mat-form-field  appearance="fill">
+                                        <mat-label class="text-white">Prize </mat-label>
+                                        <input matInput #prize name="prize" type="number" placeholder="5000" ngModel required >
+                                        <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                        
+                                      </mat-form-field>
+                                 </div>
+                                 <div class="col-md-3"> <button type="submit" class="btn  btn-success">Submit</button></div>
+                             </div>
+                           </form>
+                           <div class="text-white mb-1" >{{data.subPlayer.player3.pubgName}}</div>
+                         <form  #resultForm = "ngForm" (ngSubmit) = "resultForm.valid && onDualSubmit(resultForm,data,data.subPlayer.player3)" class="mb-3" >
+                             <div class="row">
+                                 <div class="col-md-3">
+                                    <mat-form-field  appearance="fill">
+                                        <mat-label class="text-white">Rank</mat-label>
+                                        <input matInput type="number" #rank  name="rank" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                        <mat-error *ngIf="resultForm.submitted && !rank.valid"><h5>This field is required.</h5></mat-error>
+                                      </mat-form-field>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <mat-form-field  appearance="fill">
+                                        <mat-label class="text-white">Kills </mat-label>
+                                        <input matInput #kill type="number" name="kill" placeholder="1/2/3/4//5/6/7.." ngModel required >
+                                        <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                        
+                                      </mat-form-field>
+                                 </div>
+                                 <div class="col-md-3">
+                                    <mat-form-field  appearance="fill">
+                                        <mat-label class="text-white">Prize </mat-label>
+                                        <input matInput #prize name="prize" type="number" placeholder="5000" ngModel required >
+                                        <mat-error *ngIf="resultForm.submitted && !kill.valid"><h5>This field is required.</h5></mat-error>
+                                        
+                                      </mat-form-field>
+                                 </div>
+                                 <div class="col-md-3"> <button type="submit" class="btn  btn-success">Submit</button></div>
+                             </div>
+                           </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
