@@ -1,5 +1,5 @@
 # Esports hosting Platform : 
-This project s about hosting an online
+This project  about hosting an online
 esports tournament, where players can register for the upcoming
 tournament and get notified when the tournament start. Player will
 receive the result as the end of the tournament with the ranking and
