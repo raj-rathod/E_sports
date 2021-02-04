@@ -9,7 +9,7 @@ and send a request for withdraw winning prize money and Also players
 can use wallet money as a participation fees for next tournament 
 
 <div align="center">
-    <img src="./vasipics/mainepage.png" width="600px"</img> 
+    <img src="./vasipics/mainpage.png" width="600px"</img> 
 </div>
 <div align="center">
     <img src="./vasipics/admin.png" width="600px"</img> 
